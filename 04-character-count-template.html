@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Character Count</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
+  <style type="text/css">
+    body {
+      margin: 1em auto;
+      max-width: 40em;
+      width: 88%;
+      font-family: 'Muli', sans-serif;
+      background: mistyrose;
+      position: relative;
+    }
+
+    h1 {
+      padding-bottom: 20px;
+    }
+
+    label {
+      position: absolute;
+      display: inline-block;
+      width: auto;
+      color: white;
+      background: cadetblue;
+      padding: .5rem 1rem;
+      margin-top: -20px;
+      ;
+    }
+
+    textarea {
+      min-height: 16rem;
+      width: 100%;
+      padding: 1.5rem 1rem;
+      font-size: 1.25em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Character Count</h1>
+
+  <label for="text">Enter your text below.</label>
+  <textarea id="text"></textarea>
+
+  <p>You've written <strong><span id="character-count">0</span> characters</strong>.</p>
+
+  <script>
+    document.addEventListener('keyup', function (event) {
+      if (!event.target.matches('#text')) return;
+
+      const elem = document.querySelector('#text');
+      const elemValue = elem.value.length;
+      const printCount = document.querySelector('#character-count');
+
+      printCount.textContent = elemValue;
+
+    }, false);
+  </script>
+</body>
+
+</html>
