@@ -49,14 +49,19 @@
   <p>You've written <strong><span id="character-count">0</span> characters</strong>.</p>
 
   <script>
-    document.addEventListener('keyup', function (event) {
+    /* Polyfill */
+    'use strict'
+    if (!Element.prototype.matches) {
+      Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector
+    }
+
+    const elem = document.querySelector('#text');
+    const printCount = document.querySelector('#character-count');
+
+    document.addEventListener('input', function (event) {
       if (!event.target.matches('#text')) return;
 
-      const elem = document.querySelector('#text');
-      const elemValue = elem.value.length;
-      const printCount = document.querySelector('#character-count');
-
-      printCount.textContent = elemValue;
+      printCount.textContent = elem.value.length;
 
     }, false);
   </script>
