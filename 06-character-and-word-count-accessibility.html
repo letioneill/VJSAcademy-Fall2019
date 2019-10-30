@@ -55,8 +55,8 @@
   <label for="text">Enter your text below.</label>
   <textarea id="text"></textarea>
 
-  <p id="count" aria-live="polite">You've written <strong><span>0</span> words</strong> and <strong><span>0</span>
-      characters</strong>.</p>
+  <p id="count" aria-live="polite">You've written <strong>0</strong> words and <strong>0</strong>
+    characters.</p>
 
   <script>
     /* Polyfill */
@@ -79,7 +79,7 @@
       });
 
       // Display word and character counts
-      count.innerHTML = 'You\'ve written <strong><span>' + words.length + '</span> words</strong> and <strong><span>' + text.value.length + '</span> characters</strong>.';
+      count.innerHTML = 'You\'ve written <strong>' + words.length + '</strong> words and <strong>' + text.value.length + '</strong> characters.';
 
     }, false);
   </script>
