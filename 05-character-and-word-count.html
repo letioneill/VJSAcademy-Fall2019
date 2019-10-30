@@ -70,16 +70,19 @@
     const printChar = document.querySelector('#character-count');
     const printWords = document.querySelector('#word-count');
 
-    document.addEventListener('input', function (event) {
+    elem.addEventListener('input', function () {
       if (!event.target.matches('#text')) return;
 
-      var wordList = elem.value.split(' ');
-      var wordsArray = wordList.filter(function (item) {
-        return item;
+      // Get word count
+      var words = elem.value.split(/[\n\r\s]+/g).filter(function (word) {
+        return word.length > 0;
       });
 
+      // Display word count
+      printWords.textContent = words.length;
+
+      // Display character count
       printChar.textContent = elem.value.length;
-      printWords.textContent = wordsArray.length;
 
     }, false);
   </script>
