@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>What to read today</title>
+  <link rel="stylesheet" href="css/styles.css">
+  </style>
+</head>
+<body>
+
+  <h1>Today's Top Arts News</h1>
+
+  <div id="app"></div>
+
+  <script>
+    /*!
+    * Convert a timestamp into a date
+    * (c) 2019 Chris Ferdinandi, MIT License, https://gomakethings.com
+    * @param   {String|Integer}  timestamp  The timestamp in unix of YYYY-MM-DD HH:MM:SS format
+    * @returns {String}                     A formatted date
+    */
+    var formatDate = function (timestamp) {
+
+      // Create a date object from the timestamp
+      var date = new Date(timestamp);
+
+      // Create a list of names for the months
+      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+      // return a formatted date
+      return months[date.getMonth()] + '. ' + date.getDate() + ', ' + date.getFullYear('');
+
+    };
+
+    // Get app element
+    const app = document.querySelector('#app');
+
+    //API key variable
+    const api = 'mGCkCITpA5Pgf4TAUQyi8UuOpoov9Cfv';
+
+    // Function to get articles
+    var getStory = function () {
+      fetch('https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=' + api).then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return Promise.reject(response);
+        }
+      }).then(function (data) {
+
+        // Add articles to DOM
+        console.log(data);
+        render(data.results);
+
+      }).catch(function (error) {
+        console.log('Something went wrong:', error);
+      });
+    };
+
+    //Call function
+    getStory();
+
+    // Add articles into the app element
+    var render = function (articles) {
+
+      // Create array and combine with join + add to #app with innerHTML
+      app.innerHTML = articles.map(function (article) {
+        if(article.multimedia.length > 0){
+          var imgURL = article.multimedia[4].url;
+          var imgCaption = article.multimedia[4].caption;
+          var imgCopy = article.multimedia[4].copyright;
+        }
+        var html =
+          '<article>' +
+          '<figure><img src="' + imgURL + '" alt="' + imgCaption + '"><figcaption><section aria-hidden="true"><span class="caption">' + imgCaption + '</span> <span class="credit">' + imgCopy + '</span></section></figcaption></figure>' +
+
+            '<div class="content">' +
+            '<p class="section">' + article.subsection + '</p>' +
+            '<h2><a href="' + article.url + '">' + article.title + '</a></h2>' +
+            '<p class="abstract">' + article.abstract + '</p>' +
+            '<p class="info"><span class="date">' + formatDate(article.created_date) + '</span><span class="byline">' + article.byline + '</span></p></div>' +
+          '</article>';
+        return html;
+      }).join('');
+
+    };
+  </script>
+</body>
+</html>
