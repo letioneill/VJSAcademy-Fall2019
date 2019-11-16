@@ -69,7 +69,7 @@
     function render(articles, section) {
       app.innerHTML += 
         '<section>' +
-          '<h4>' + sanitizeHTML(section) + '</h4>' +
+          '<h4>' + section + '</h4>' +
           '<div class="articles">' +
             articles.slice(0, 7).map(renderArticles).join("") +
           '</div>' +
