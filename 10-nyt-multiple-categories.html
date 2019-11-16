@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>What to read today</title>
+  <link rel="stylesheet" href="css/styles-nyt-2.css">
+  </style>
+</head>
+<body class="topical-display">
+
+  <h1>Today's News</h1>
+
+  <div id="app"></div>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+  <script>
+    /*!
+    * Convert a timestamp into a date
+    * (c) 2019 Chris Ferdinandi, MIT License, https://gomakethings.com
+    * @param   {String|Integer}  timestamp  The timestamp in unix of YYYY-MM-DD HH:MM:SS format
+    * @returns {String}                     A formatted date
+    */
+    var formatDate = function (timestamp) {
+
+      // Create a date object from the timestamp
+      var date = new Date(timestamp);
+
+      // Create a list of names for the months
+      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+      // return a formatted date
+      return months[date.getMonth()] + '. ' + date.getDate() + ', ' + date.getFullYear('');
+
+    };
+
+    // Variables
+    const app = document.querySelector('#app');
+    const api = 'mGCkCITpA5Pgf4TAUQyi8UuOpoov9Cfv';
+    const sections = ['arts', 'technology', 'books'];
+
+
+    // Add articles into the app element
+    function renderArticles (article) {
+        return (
+          '<article>' +
+          '<figure><img src="' + article.multimedia[4].url + '" alt="' + article.multimedia[4].caption + '"><figcaption><section aria-hidden="true"><span class="caption">' + article.multimedia[4].caption + '</span> <span class="credit">' + article.multimedia[4].copyright + '</span></section></figcaption></figure>' +
+
+            '<div class="content">' +
+            '<p class="section">' + article.subsection + '</p>' +
+            '<h2><a href="' + article.url + '">' + article.title + '</a></h2>' +
+            '<p class="abstract">' + article.abstract + '</p>' +
+            '<p class="info"><span class="date">' + formatDate(article.created_date) + '</span><span class="byline">' + article.byline + '</span></p></div>' +
+          '</article>'
+        );
+    }
+
+    // Add articles into the app element
+    function render(articles, section) {
+      app.innerHTML += 
+        '<section>' +
+          '<h4>' + section + '</h4>' +
+          '<div class="articles">' +
+            articles.slice(0, 7).map(renderArticles).join("") +
+          '</div>' +
+        '</section>';
+    }
+
+    // Function to get articles
+    function getSections(section) {
+        fetch('https://api.nytimes.com/svc/topstories/v2/' + section + '.json?api-key=' + api).then(function (response) {
+          if (response.ok) {
+            return response.json();
+          } else {
+            return Promise.reject(response);
+          }
+        }).then(function (data) {
+
+          render(data.results, section);
+
+        }).catch(function (error) {
+          console.log('No articles available at this time', error);
+        });
+    }
+
+    // Insert the content from the API
+    sections.forEach(getSections);
+
+  </script>
+</body>
+</html>
