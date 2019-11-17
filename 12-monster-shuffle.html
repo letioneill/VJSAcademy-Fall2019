@@ -82,14 +82,10 @@
       }
 
       return array;
-
     };
 
     // Variables
     const app = document.querySelector('#app');
-    var div = document.createElement('div');
-      div.classList.add("row");
-      app.appendChild(div);
     
     // The monsters and socks
     var monsters = [
@@ -106,28 +102,18 @@
       'monster11',
       'sock'
     ];
-    // New shuffled monsters array
-    var shuffledMonsters = shuffle(monsters.slice());
 
+    // Shuffle monsters array
+    shuffle(monsters);
 
-    var render = function (monsters) {
-
-      // Hold the HTML string
-      var html = '';
-
-      // Create a div for each monster
-      monsters.forEach(function (monster) {
-        html +=
-          '<div class="grid">' +
-            '<img src="img/monsters/' + monster + '.svg" alt="' + monster + '">' +
-          '</div>'
-      });
-
-      // Inject into the DOM
-      div.innerHTML = html;
-
-    };
-    render(shuffledMonsters);
+    // Create the HTML and inject it into the DOM
+    app.innerHTML = '<div class="row">' + monsters.map(function (monster) {
+      var html =
+        '<div class="grid">' +
+          '<img alt="' + monster + '" src="img/monsters/' + monster + '.svg">' +
+        '</div>';
+      return html;
+    }).join('') + '</div>';
 
 
   </script>
