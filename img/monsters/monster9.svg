@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>monster9</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect width="200" height="200" fill="#b4be8c"/>
+      <ellipse cx="96.05" cy="181.64" rx="80.43" ry="9.03" fill="#231f20" opacity="0.4"/>
+      <path d="M168.9,100c0,46.56-33.77,74.74-72.85,84.3C27.15,201.16,1.31,159.43,23.21,100c16.1-43.69,32.61-84.3,72.84-84.3S168.9,53.44,168.9,100Z" fill="#00998b"/>
+      <path d="M29.91,125.13C27,171.6,51.12,178.3,96.05,184.3,27.15,201.16,1.51,159.51,23.21,100,37.65,60.41,55.47,16.57,96.05,15.7,56.42,34.16,32.52,82.94,29.91,125.13Z" fill="#047a6c"/>
+      <ellipse cx="125.86" cy="117.91" rx="46.93" ry="24.59" transform="translate(-30.67 190.31) rotate(-67.95)" fill="#dc2328"/>
+      <ellipse cx="115.53" cy="125.43" rx="25.2" ry="16.35" transform="translate(-44.09 185.43) rotate(-67.95)" fill="#be1e2d"/>
+      <circle cx="103.79" cy="56.82" r="4.82" fill="#231f20"/>
+      <circle cx="104.58" cy="55" r="2" fill="#fff"/>
+      <circle cx="134.5" cy="47.98" r="3.5" fill="#231f20"/>
+      <circle cx="135.75" cy="46.98" r="1.5" fill="#fff"/>
+      <polygon points="129.13 75.45 123.37 98.26 117.61 79.45 129.13 75.45" fill="#fff"/>
+      <polygon points="142.56 69.81 136.81 92.62 131.05 73.81 142.56 69.81" fill="#fff"/>
+      <polygon points="126.48 156.81 132.24 134 138 152.81 126.48 156.81" fill="#fff"/>
+      <polygon points="108.61 165.56 114.36 142.75 120.12 161.56 108.61 165.56" fill="#fff"/>
+      <circle cx="69.92" cy="82.94" r="3.91" fill="#047a6c"/>
+      <circle cx="44.66" cy="108.2" r="3.91" fill="#047a6c"/>
+      <circle cx="77.74" cy="121.22" r="3.91" fill="#047a6c"/>
+      <circle cx="67.46" cy="98.99" r="6.37" fill="#047a6c"/>
+    </g>
+  </g>
+</svg>

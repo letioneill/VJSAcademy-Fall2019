@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monsters!</title>
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,400,900&display=swap');
+
+    body {
+      margin: 1em auto;
+      max-width: 40em;
+      width: 90%;
+      font-family: 'Montserrat Alternates', sans-serif;
+      background-color: rgba(210,194,170,.35);
+      background-image: linear-gradient(transparent 50%, rgba(234,227,204,.5) 50%);
+      background-size: 50px 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      color: #000;
+    }
+
+    h1 span {
+      font-weight: 100;
+      font-size: .95em;
+      color: #5d6563;
+    }
+
+    /**
+     * A simple grid layout
+     */
+    .row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 400px) );
+      grid-template-rows: auto;
+    }
+    
+    .grid {
+      max-height: 13em;
+      max-width: 40em;
+    }
+
+    /**
+     * Make sure images scale
+     */
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Monster<span>Shuffle</span></h1>
+
+  <div id="app"></div>
+
+  <script>
+    /**
+     * Randomly shuffle an array
+     * https://stackoverflow.com/a/2450976/1293256
+     * @param  {Array} array The array to shuffle
+     * @return {String}      The first item in the shuffled array
+     */
+    var shuffle = function (array) {
+
+      var currentIndex = array.length;
+      var temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+
+    };
+
+    // Variables
+    const app = document.querySelector('#app');
+    var div = document.createElement('div');
+      div.classList.add("row");
+      app.appendChild(div);
+    
+    // The monsters and socks
+    var monsters = [
+      'monster1',
+      'monster2',
+      'monster3',
+      'monster4',
+      'monster5',
+      'monster6',
+      'monster7',
+      'monster8',
+      'monster9',
+      'monster10',
+      'monster11',
+      'sock'
+    ];
+    // New shuffled monsters array
+    var shuffledMonsters = shuffle(monsters.slice());
+
+
+    var render = function (monsters) {
+
+      // Hold the HTML string
+      var html = '';
+
+      // Create a div for each monster
+      monsters.forEach(function (monster) {
+        html +=
+          '<div class="grid">' +
+            '<img src="img/monsters/' + monster + '.svg" alt="' + monster + '">' +
+          '</div>'
+      });
+
+      // Inject into the DOM
+      div.innerHTML = html;
+
+    };
+    render(shuffledMonsters);
+
+
+  </script>
+</body>
+</html>

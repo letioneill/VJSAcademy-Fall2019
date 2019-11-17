@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>monster8</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect width="200" height="200" fill="#9ebca8"/>
+      <path d="M36.62,66.87a20.22,20.22,0,0,1,40.43,0" fill="#fff"/>
+      <rect x="58.89" y="85.86" width="76.54" height="99.07" rx="38.27" transform="translate(232.55 38.23) rotate(90)" fill="#b54599"/>
+      <path d="M44.78,66.76a12.06,12.06,0,0,1,24.11,0" fill="#231f20"/>
+      <path d="M109.64,66.87a20.21,20.21,0,0,1,40.42,0" fill="#fff"/>
+      <path d="M117.79,66.76a12.06,12.06,0,0,1,24.11,0" fill="#231f20"/>
+      <circle cx="59.74" cy="60.81" r="3.95" fill="#fff"/>
+      <circle cx="133.21" cy="60.81" r="3.95" fill="#fff"/>
+      <circle cx="179.09" cy="96.26" r="5.8" fill="#8fa796"/>
+      <circle cx="150.06" cy="97.45" r="5.8" fill="#8fa796"/>
+      <circle cx="181.19" cy="64.77" r="7.9" fill="#8fa796"/>
+      <circle cx="16.67" cy="60.73" r="5.8" fill="#8fa796"/>
+      <circle cx="42.89" cy="90.79" r="5.8" fill="#8fa796"/>
+      <circle cx="24.58" cy="104.52" r="7.9" fill="#8fa796"/>
+    </g>
+  </g>
+</svg>

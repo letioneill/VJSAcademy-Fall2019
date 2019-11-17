@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>monster7</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect width="200" height="200" fill="#69626b"/>
+      <ellipse cx="99.47" cy="178.6" rx="78.03" ry="9.03" fill="#231f20" opacity="0.5"/>
+      <path d="M99.47,29.74h0A38.36,38.36,0,0,1,137.83,68.1v112a0,0,0,0,1,0,0H61.11a0,0,0,0,1,0,0V68.1A38.36,38.36,0,0,1,99.47,29.74Z" fill="#65bca6"/>
+      <path d="M137.83,180.14H123.71l-.18-113.26c0-21.19-6.51-25.16-24.06-37.14h0A38.35,38.35,0,0,1,137.83,68.1Z" fill="#4a8e7b"/>
+      <g>
+        <circle cx="79.64" cy="81.5" r="7.38" fill="#231f20"/>
+        <circle cx="78.1" cy="78.96" r="1.85" fill="#fff"/>
+      </g>
+      <g>
+        <circle cx="117.02" cy="85.95" r="7.38" fill="#231f20"/>
+        <circle cx="115.48" cy="83.42" r="1.85" fill="#fff"/>
+      </g>
+      <polyline points="67.08 122.1 35.2 122.1 35.2 78.57" fill="none" stroke="#65bca6" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/>
+      <polyline points="159.59 56.83 159.59 130.5 111.46 130.5" fill="none" stroke="#65bca6" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/>
+      <g>
+        <line x1="84.09" y1="117.63" x2="84.09" y2="123.63" fill="none" stroke="#4a8e7b" stroke-miterlimit="10"/>
+        <line x1="84.09" y1="135.23" x2="84.09" y2="154.95" fill="none" stroke="#4a8e7b" stroke-miterlimit="10" stroke-dasharray="13.92 11.6"/>
+        <line x1="84.09" y1="160.75" x2="84.09" y2="166.75" fill="none" stroke="#4a8e7b" stroke-miterlimit="10"/>
+      </g>
+      <g>
+        <line x1="109.64" y1="119.26" x2="109.64" y2="121.76" fill="none" stroke="#4a8e7b" stroke-miterlimit="10"/>
+        <line x1="109.64" y1="138.06" x2="109.64" y2="152.02" fill="none" stroke="#4a8e7b" stroke-miterlimit="10" stroke-dasharray="5.82 16.29"/>
+        <line x1="109.64" y1="160.17" x2="109.64" y2="162.67" fill="none" stroke="#4a8e7b" stroke-miterlimit="10"/>
+      </g>
+      <polyline points="36.65 79.55 36.65 121.63 55.2 121.63" fill="none" stroke="#4a8e7b" stroke-miterlimit="10" stroke-dasharray="5 14"/>
+      <polyline points="123.03 130.27 163.59 130.27 163.59 61.41" fill="none" stroke="#4a8e7b" stroke-miterlimit="10" stroke-dasharray="12 10"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>monster4</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect width="200" height="200" fill="#dbd6bc"/>
+      <ellipse cx="97.73" cy="187.33" rx="78.03" ry="9.03" fill="#231f20" opacity="0.3"/>
+      <path d="M111.8,161.23c-6,9.42-21.19,9.42-27.25,0L63.38,128.29,43.85,97.89c-6.78-10.56,1.7-23.75,15.26-23.75h79.13c13.12,0,21.33,12.76,14.76,23l-20,31.17Z" fill="#df9e27"/>
+      <path d="M139.18,74.43c0,23.74-17.58,43-39.26,43s-39.26-19.26-39.26-43" fill="#8c6828"/>
+      <circle cx="99.97" cy="72.17" r="39.21" fill="#ed2870"/>
+      <circle cx="99.61" cy="70.81" r="24.11" fill="#fff"/>
+      <g id="eye-chip">
+        <circle cx="99.61" cy="70.81" r="16.05" fill="#231f20"/>
+        <circle cx="103.39" cy="68.62" r="3.31" fill="#fff"/>
+      </g>
+      <line x1="63.68" y1="57.31" x2="45.49" y2="46.69" fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+      <line x1="136.49" y1="57.31" x2="154.68" y2="46.69" fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+      <path d="M60.76,65.62C60.76,47.59,78.31,33,100,33s39.21,14.63,39.21,32.66" fill="#00a18a"/>
+      <line x1="74.49" y1="39.12" x2="62.68" y2="23.41" fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+      <line x1="124.72" y1="37.72" x2="137.49" y2="23.41" fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+      <line x1="99.97" y1="30.96" x2="100.34" y2="14.33" fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+      <line x1="65.38" y1="128.29" x2="130.97" y2="128.29" fill="none" stroke="#a57c2c" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="74.38" y1="140.98" x2="121.97" y2="140.98" fill="none" stroke="#a57c2c" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <line x1="81.38" y1="154.15" x2="114.97" y2="154.15" fill="none" stroke="#a57c2c" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <path d="M122,145.4s15.38,12.37,15.52,40.54" fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <path d="M73.51,145.4S58.13,157.77,58,185.94" fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+      <path d="M42.54,192a15.46,15.46,0,1,1,30.91,0" fill="#b54599"/>
+      <path d="M122.37,192a15.46,15.46,0,1,1,30.91,0" fill="#b54599"/>
+    </g>
+  </g>
+</svg>
