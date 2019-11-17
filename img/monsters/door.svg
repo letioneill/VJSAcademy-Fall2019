@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>door_1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <polygon points="50 19.5 50.03 180.5 55.03 180.5 55 24.5 145 24.5 145 180.5 150 180.5 150 19.5 50 19.5" fill="#89461f"/>
+        <rect x="54.3" y="23.93" width="91.11" height="156.56" fill="#ba6a32"/>
+        <g>
+          <circle cx="135.77" cy="95.52" r="5" fill="#f1b81b"/>
+          <path d="M140.77,95.52a5,5,0,0,1-5,5c2.5-1.46,3.11-2.77,3.17-4.71a5.81,5.81,0,0,0-3.17-5.29A5,5,0,0,1,140.77,95.52Z" fill="#ca9b2c"/>
+        </g>
+        <polyline points="69.29 152.59 69.29 111.62 129.24 111.62" fill="none" stroke="#89461f" stroke-miterlimit="10" stroke-width="3" opacity="0.6"/>
+        <polyline points="129.24 111.62 129.24 152.59 69.29 152.59" fill="none" stroke="#ddac68" stroke-miterlimit="10" stroke-width="3" opacity="0.6"/>
+        <polyline points="69.29 82.59 69.29 41.62 129.24 41.62" fill="none" stroke="#89461f" stroke-miterlimit="10" stroke-width="3" opacity="0.6"/>
+        <polyline points="129.24 41.62 129.24 82.59 69.29 82.59" fill="none" stroke="#ddac68" stroke-miterlimit="10" stroke-width="3" opacity="0.6"/>
+      </g>
+    </g>
+  </g>
+</svg>
