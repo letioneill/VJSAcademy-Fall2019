@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monsters!</title>
+  <link rel="stylesheet" href="css/style-monsters.css">
+</head>
+<body>
+
+  <h1>Monster<span>Shuffle</span></h1>
+  <p class="info">Click doors to find all monsters. <em>Avoid the sock!</em></p>
+  <section class="statistics">
+    <h3>Score</h3>
+    <ul class="scoreboard">
+      <li class="score-wins">
+        <div class="stats">
+          <div class="thumb">
+            <img alt="trophy icon" src="img/monsters/award.svg">
+          </div>
+          <div id="scoreWins">0</div>
+        </div>
+        <p>Wins</p>
+      </li>
+      <li class="monsters-found">
+        <div class="stats">
+          <div class="thumb">
+            <img alt="monster icon" src="img/monsters/monster.svg">
+          </div>
+          <div id="monstersFound">0</div>
+        </div>
+        <p>Monsters Found</p>
+      </li>
+      <li class="games-played">
+        <div class=stats>
+          <div class="thumb">
+            <img alt="controller icon" src="img/monsters/game.svg">
+          </div>
+          <div id="gamesPlayed">0</div>
+        </div>
+        <p>Games Played</p>
+      </li>
+    </ul>
+  </section>
+
+  <div id="app"></div>
+
+  <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <script src="js/script-monsters.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>monster</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <ellipse cx="49.73" cy="49.21" rx="32.67" ry="39.16" fill="#69325e"/>
+      <ellipse cx="50" cy="29.24" rx="11.43" ry="10.32" fill="#fff"/>
+      <g>
+        <circle cx="50" cy="31.46" r="7.38" fill="#231f20"/>
+        <circle cx="48.46" cy="28.92" r="1.85" fill="#fff"/>
+      </g>
+      <g>
+        <polygon points="49.3 57.47 45.46 64.12 41.62 57.47 49.3 57.47" fill="#fff"/>
+        <polygon points="58.22 57.47 54.38 64.12 50.55 57.47 58.22 57.47" fill="#fff"/>
+      </g>
+      <g>
+        <path d="M69.8,71.92s10.57,2.64,10.57,21.14" fill="none" stroke="#69325e" stroke-miterlimit="10" stroke-width="4"/>
+        <path d="M70.32,94.83a10.35,10.35,0,0,1,20.69,0" fill="#00a18a"/>
+      </g>
+      <g>
+        <path d="M29.66,71.92S19.1,74.56,19.1,93.06" fill="none" stroke="#69325e" stroke-miterlimit="10" stroke-width="4"/>
+        <path d="M29.15,94.83a10.35,10.35,0,0,0-20.69,0" fill="#00a18a"/>
+      </g>
+    </g>
+  </g>
+</svg>
