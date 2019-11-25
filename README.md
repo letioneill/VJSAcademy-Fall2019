@@ -2,7 +2,6 @@
 
 Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 
-## Projects
 
 ### 01-Password Visibility
 01. Toggle password visibility [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/01_password-visibility/01-toggle-password-visibility.html)
