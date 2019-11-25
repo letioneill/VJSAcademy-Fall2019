@@ -4,12 +4,12 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 
 ## Projects
 
-###01-Password Visibility
+*01-Password Visibility*
   01. Toggle password visibility [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/01_password-visibility/01-toggle-password-visibility.html)
   02. Toggling multiple password fields [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/01_password-visibility/02-password-visibility-multiple-fields.html)
   03. Password visibility on multiple forms [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/01_password-visibility/03-password-visibility-multiple-forms.html)
 
-###02-Character Count
+*02-Character Count*
   04. Character countdown [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/02_character-count/04-character-count.html)
   05. Character and word count [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/02_character-count/05-character-and-word-count.html)
   06. Character and word count accessibility [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/02_character-count/06-character-and-word-count-accessibility.html)
