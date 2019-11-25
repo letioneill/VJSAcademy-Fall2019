@@ -68,7 +68,7 @@ var renderMonsters = function () {
         var html =
           '<div class="grid" aria-live="polite">' +
             '<button data-monster-id="' + index + '">' +
-              '<img alt="Click the door to see what\'s behind it" src="img/monsters/door.svg">' +
+              '<img alt="Click the door to see what\'s behind it" src="assets/img/door.svg">' +
             '</button>' +
           '</div>';
         return html;
@@ -133,14 +133,14 @@ var clickHandler = function (event) {
   // If the door reveals a sock, render the lost UI
   // Then, end the callback function
   if (monsters[id] === 'sock') {
-    monster.parentNode.innerHTML = '<img alt="' + monsters[id] + '" src="img/monsters/' + monsters[id] + '.svg">';
+    monster.parentNode.innerHTML = '<img alt="' + monsters[id] + '" src="assets/img/' + monsters[id] + '.svg">';
     renderLost();
     return;
   }
   // Update the HTML for the button's parent element
   // This will replace the button so that the content can't be clicked again
   // We'll use the id to get the monster from our shuffled array
-  monster.parentNode.innerHTML = '<img alt="' + monsters[id] + '" src="img/monsters/' + monsters[id] + '.svg">';
+  monster.parentNode.innerHTML = '<img alt="' + monsters[id] + '" src="assets/img/' + monsters[id] + '.svg">';
   // Increase the number of monsters who have been found by 1
   found++;
   monstersFound.innerHTML = found;

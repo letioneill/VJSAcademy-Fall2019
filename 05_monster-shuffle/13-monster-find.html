@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Monsters!</title>
-  <link rel="stylesheet" href="_assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -71,7 +71,7 @@
       // Update the HTML for the button's parent element
       // This will replace the button so that the content can't be clicked again
       // We'll use the id to get the monster from our shuffled array
-      monster.parentNode.innerHTML = '<img alt="' + monsters[id] + '" src="_assets/img/' + monsters[id] + '.svg">';
+      monster.parentNode.innerHTML = '<img alt="' + monsters[id] + '" src="assets/img/' + monsters[id] + '.svg">';
     };
 
     // Shuffle monsters array
@@ -87,7 +87,7 @@
           var html =
             '<div class="grid" aria-live="polite">' +
               '<button data-monster-id="' + index + '">' +
-                '<img alt="Click the door to see what\'s behind it" src="_assets/img/door.svg">' +
+                '<img alt="Click the door to see what\'s behind it" src="assets/img/door.svg">' +
               '</button>' +
             '</div>';
           return html;
