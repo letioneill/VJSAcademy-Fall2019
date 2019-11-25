@@ -1,0 +1,11 @@
+GAME IDEAS
+
+Interaction
+• flip doors 3-d
+
+Feedback
+• descriptive response messages with data
+ - win: Great job! [play again] | x wins
+ - win/lose: delay the appearance of modal to see sock or last monster
+ - win: show a trophy in modal
+ - lose: show sock in modal

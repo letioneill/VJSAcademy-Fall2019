@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond|Roboto|Ultra&display=swap');
 
-
 body {
   font-family: 'EB Garamond', serif;
   margin: 1em auto;
@@ -24,6 +23,11 @@ h1 {
   margin: 0 auto 2rem;
 }
 
+body:not(.topical-display) h1 {
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+}
+
 h4 {
   font-family: 'Ultra', serif;
   font-size: 1.2em;
@@ -43,20 +47,33 @@ h4 {
   display: grid;
 }
 
-#app .articles {
+body:not(.topical-display) #app {
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+.topical-display #app .articles {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
 }
 
 @media (min-width: 700px) {
-  #app .articles{
+  body:not(.topical-display) #app {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .topical-display #app .articles{
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 1050px) {
-  #app .articles{
+  body:not(.topical-display) #app {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .topical-display #app .articles{
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -115,6 +132,10 @@ h2 a:hover {
   display:flex;
   flex-direction: column;
   padding: 0 0 1rem;
+}
+
+body:not(.topical-display) #app article:nth-child(7n+1) {
+  border-bottom: 2px solid rgb(18, 18, 18);
 }
 
 #app article:nth-child(7n+1) figure {

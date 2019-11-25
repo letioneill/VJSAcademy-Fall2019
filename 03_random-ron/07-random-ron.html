@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Ron</title>
+  <link rel="stylesheet" href="_assets/css/styles.css">
+</head>
+<body>
+
+  <section>
+
+    <h1>Random Ron</h1>
+
+    <blockquote id="quote" aria-live="polite">
+      <em>Getting a fresh quote...</em>
+    </blockquote>
+
+    <p>
+      <button id="get-quote">More Ron</button>
+    </p>
+  </section>
+
+  
+
+  <script src="../polyfills/promise.js"></script>
+  <script src="../polyfills/fetch.js"></script>
+  <script>
+    // Set up variables
+    const quote = document.querySelector('#quote');
+    const btn = document.querySelector('#get-quote');
+
+    // Quote function
+    var getQuote = function () {
+      fetch('https://ron-swanson-quotes.herokuapp.com/v2/quotes').then(function (response) {
+      // The API call was successful!
+      if (response.ok) {
+        return response.json();
+      } else {
+        return Promise.reject(response);
+      }
+    }).then(function (data) {
+      // Print quote
+      quote.textContent = data[0];
+    }).catch(function (err) {
+      // There was an error
+      quote.textContent = 'Something went wrong. No quote for you';
+    });
+  };
+
+  // Call function
+  getQuote();
+
+  // Call function on click
+  btn.addEventListener('click', getQuote, false);
+
+  </script>
+</body>
+</html>
