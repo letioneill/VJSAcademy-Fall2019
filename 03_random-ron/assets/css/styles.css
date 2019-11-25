@@ -24,7 +24,7 @@ body::before {
   position: absolute;
   bottom: 0;
   right: 0;
-  background: url(../../_assets/img/rob_swanson.png) no-repeat right bottom;
+  background: url(../../assets/img/rob_swanson.png) no-repeat right bottom;
   background-size: contain; 
   z-index:0;
 }
