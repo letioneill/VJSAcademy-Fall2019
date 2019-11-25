@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700&display=swap');
+
+
+body {
+  margin: 1em auto;
+  max-width: 40em;
+  width: 88%;
+  font-family: 'Muli', sans-serif;
+  background-color: rgb(110, 196, 196);
+}
+
+::selection {}
+
+h1 {
+  color: rgb(43, 71, 71);
+}
+
+fieldset {
+  border: none;
+  padding: 1em 2em;
+  background-color: white;
+}
+
+legend {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: white;
+  padding: .25em .5em;
+  background-color: rgb(63, 114, 114);
+}
+
+.helper {
+  font-style: italic;
+  font-size: .75em;
+  padding: 1em;
+  margin-bottom: 3em;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+div {
+  display: flex;
+  margin: 1em 0;
+}
+
+div:last-of-type {
+  display: block;
+}
+
+label {
+  width: 25%;
+}
+
+input {
+  margin-bottom: 1em;
+  width: 50%;
+}
+
+div:last-of-type input {
+  width: auto;
+}
+
+input:not([type="checkbox"]) {
+  font-size: 14px;
+  height: 25px;
+  padding: 2px 4px;
+}
+
+[type="checkbox"] {
+  margin-bottom: 0;
+  margin-right: 0.25em;
+  font-size: 24px;
+  border: none;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem;
+  margin: 1rem 0 0;
+  text-decoration: none;
+  background: #ed5f00;
+  color: #ffffff;
+  font-size: .9rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 150ms ease-in-out,
+    transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:focus,
+button:hover {
+  color: #ffffff;
+  background: #c92d06;
+  box-shadow: 3px 3px 0 0 #ccc;
+}
+
+form:nth-of-type(2) {
+  margin-top: 4rem;
+}
