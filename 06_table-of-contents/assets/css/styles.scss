@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700|Montserrat+Alternates:400,900&display=swap');
+
+// ------- Variables
+$bl: #000;
+$dgr: #222;
+$wt:#fff;
+$txt: #333;
+
+$mont: 'Montserrat Alternates', sans-serif;
+$muli: 'Muli', sans-serif;
+// -------
+
+* {
+  margin:0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  height: 100vh;
+  font-family: $muli;
+  color: $txt;
+  background: url("../img/mural.svg") 50% 50%;
+  // background-size: contain;
+}
+
+h1 {
+  display: inline-block;
+  color: $wt;
+  font-family: $mont;
+  font-weight: 400;
+  font-size: 3em;
+  line-height: .9;
+  padding: .5em .5em .5em 1em;
+  margin: 1.01em 0 .75em;
+  background: $bl;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 4em;
+    margin: .75em 0 .75em;
+  }
+}
+
+#table-of-contents {
+  margin: 1em auto;
+  max-width: 40em;
+  width: 88%;
+}
+
+.toc {
+  font-size: .85em;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  display: inline-block;
+  background: $wt;
+  padding: 1em;
+  border-bottom: 3px solid rgba(150,150,150, .5)
+}
+
+main {
+  background: $wt;
+  padding:5em;
+  margin: 0 auto;
+  max-width: 40em;
+  width: 90%;
+
+  h2, h3, h4 {
+    font-family: $mont;
+  }
+  h2 {
+    font-size: 2em;
+    color: $bl;
+    font-weight: 900;
+    margin: 1.5em 0 .5em;
+    display: flex;
+    justify-content: space-between;
+
+    &:target::before {
+      display: block;
+      content: "";
+      height: 5px;
+      width: 100%;
+      // background-color: pink;
+      position: absolute;
+      top: 15px;
+      left: -60px;
+      width: 50px;
+      background: url("../img/wave.svg");
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-size: auto auto;
+      background-size: 19px 11px; 
+      animation: move 15s linear infinite;
+      -webkit-animation: move 15s linear infinite;
+      animation-play-state: running;
+    }
+  }
+
+  a {
+    position:absolute;
+    right: 0;
+    background: #ffc72c;
+    padding: 1em;
+    margin-top: -4em;
+    font-family: $mont;
+    font-size: .8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .7px;
+    color: $bl;
+    display: none;
+  }
+
+  h2:target + a {
+    display: inline-block;
+  }
+
+  h3 {
+    color: dodgerblue;
+    margin: .75em 0 .5em;
+  }
+
+  h4 {
+    margin: .5em 0;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+footer {
+  background: $bl;
+  padding:1em 5em;
+  margin: 2em auto 0;
+  max-width: 40em;
+  width: 90%;
+  color: $wt;
+
+  a {
+    text-decoration: none;
+    color: dodgerblue;
+  }
+}
+
+ol {
+  list-style-type: none;
+  color: $dgr;
+  background: $bl;
+  padding: 0;
+  margin: 0 5em -5em -2em;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 175px;
+
+  li {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    border-right: 1px dashed $wt;
+    overflow: hidden;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+  .anchor {
+    display: block;
+    width: 100%;
+    padding: .5em 0 .5em 1.4em;
+    transform: rotate(-90deg);
+  }
+  a {
+    color: $wt;
+    font-weight: 700;
+    text-decoration: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(80%, transparent), color-stop(0%, rgb(255, 199, 44)));
+    background-image: linear-gradient(to bottom, transparent 80%, rgb(255, 199, 44) 0%);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background-size .4s ease;
+
+    &:focus,
+    &:hover {
+      background-size: 100% 100%;
+      cursor: pointer;
+    }
+  }
+
+  span {
+    display:block;
+    width: 100%;
+    font-size: 3.5em;
+    font-weight: 700;
+    color: $txt;
+    text-align: center;
+    position: absolute;
+    bottom: -.4em;
+  }
+}
+
+
+@-webkit-keyframes move {
+  from {
+    background-position: 2px 19px;
+  }
+  to {
+    background-position: 500px 19px;
+  }
+}
+
+@keyframe move {
+  from {
+    background-position: 2px 19px;
+  }
+  to {
+    background-position: 500px 19px;
+  }
+}
