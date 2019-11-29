@@ -94,26 +94,32 @@
   </footer>
 
   <script>
+    // Get table of contents container
     var toc = document.querySelector('#table-of-contents');
+
+    // Get all h2 headings
     var headers = Array.prototype.slice.call(document.querySelectorAll('h2'));
       headers.forEach(function (header, index) {
       console.log(header.textContent);
     });
 
-    toc.innerHTML =
-    '<h2 class="toc">Table of Contents</h2>' +
-    '<ol>' +
-      headers.map(function (header, index) {
-      var listItems =
-        '<li>' +
-          '<span class="order">0' + (index + 1) + '</span>' +
-          '<div class="anchor">' +
-            '<a href="#' + header.id + '">' + header.textContent +
-            '</a>' +
-        '</li>';
-        return listItems;
-      }).join('') +
-    '</ol>';
+    if (headers.length > 0) {
+      
+      toc.innerHTML =
+      '<h2 class="toc">Table of Contents</h2>' +
+      '<ol>' +
+        headers.map(function (header, index) {
+        var listItems =
+          '<li>' +
+            '<span class="order">0' + (index + 1) + '</span>' +
+            '<div class="anchor">' +
+              '<a href="#' + header.id + '">' + header.textContent +
+              '</a>' +
+          '</li>';
+          return listItems;
+        }).join('') +
+      '</ol>';
+    }
 
 
   </script>
