@@ -28,5 +28,8 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 14. Monster Track Wins  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/05_monster-shuffle/14-monster-track-wins.html)
 
 ### 06. Table of Contents
+15. Table of Contents  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/06_table-of-contents/15-table-of-contents.html)
+16. Table of Contents - Missing Ids  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/06_table-of-contents/16-table-of-contents-missing-ids.html)
+17. Table of Contents - Scoped  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/06_table-of-contents/17-table-of-contents-iffe.html)
 
 ### 07. Weather App
