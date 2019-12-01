@@ -264,6 +264,7 @@ h1 {
   #app {
     background: rgb(72,68,129);
     background: linear-gradient(180deg, rgba(72,68,129,1) 0%, rgba(108,104,170,1) 100%);
+    box-shadow: 0 0 8px rgba($niteb2, .25);
   }
 
   .location {

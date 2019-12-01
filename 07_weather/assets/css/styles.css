@@ -204,6 +204,7 @@ h1 {
 .n-time #app {
   background: #484481;
   background: linear-gradient(180deg, #484481 0%, #6c68aa 100%);
+  box-shadow: 0 0 8px rgba(47, 44, 94, 0.25);
 }
 .n-time .location {
   color: #fff;
