@@ -43,7 +43,7 @@
         '</div>' +
       '</div>' +
       '<ul class="details">' +
-        '<li><span><image class="d-icon" src="assets/img/feels.svg">' + Math.round(fToC(sanitizeHTML(weather.app_temp))) + '</span>Feels like</li>' +
+        '<li><span><image class="d-icon" src="assets/img/feels.svg">' + Math.round(fToC(sanitizeHTML(weather.app_temp))) + '<small>&deg;</small></span>Feels like</li>' +
         '<li><span><image class="d-icon" src="assets/img/sunrise.svg">' + sanitizeHTML(weather.sunrise) + '</span>Sunrise</li>' +
         '<li><span><image class="d-icon" src="assets/img/sunset.svg">' + sanitizeHTML(weather.sunset) + '</span>Sunset</li>' +
         '<li><span><image class="d-icon" src="assets/img/visibility.svg">' + Math.round(kToM(weather.vis)) + ' mi' + ' </span>Visibility</li>' +
