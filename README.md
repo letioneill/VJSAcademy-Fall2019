@@ -33,3 +33,4 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 17. Table of Contents - Scoped  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/06_table-of-contents/17-table-of-contents-iffe.html)
 
 ### 07. Weather App
+18. Weather App  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/07_weather/18-weather-app.html)

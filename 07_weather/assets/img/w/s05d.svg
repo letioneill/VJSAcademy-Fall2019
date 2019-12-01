@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>s05d</title>
+    <desc>Created with Sketch.</desc>
+    <g id="s05d" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M28,78 C18.0140772,77.7066089 10,68.8650818 10,58 C10,46.954305 18.2827321,38 28.5,38 C29.7757469,38 31.0213334,38.1396019 32.2244018,38.405446 C33.9570701,24.6392814 45.5082533,14 59.5,14 C71.6444089,14 81.9501682,22.0153261 85.5927674,33.1337496 C86.3838812,33.0451253 87.1867879,33 88,33 C100.150264,33 110,43.0735931 110,55.5 C110,67.9264069 100.150264,78 88,78 L88,78 L28,78 Z" id="cloud" fill="#FFFFFF" opacity="0.9"></path>
+        <path d="M26,86 L85,86 C92.1797017,86 98,80.1797017 98,73 C98,65.8202983 92.1797017,60 85,60 C77.8202983,60 72,65.8202983 72,73" id="Oval" stroke="#3084B3" stroke-width="4" stroke-linecap="round" transform="translate(62.000000, 73.000000) scale(-1, 1) translate(-62.000000, -73.000000) "></path>
+        <line x1="95" y1="95" x2="44" y2="95" id="Path-2" stroke="#3084B3" stroke-width="4" stroke-linecap="round"></line>
+        <line x1="37" y1="95" x2="31" y2="95" id="Path-3" stroke="#3084B3" stroke-width="4" stroke-linecap="round"></line>
+        <path d="M50,116 L79.5,116 C83.0898509,116 86,113.089851 86,109.5 C86,105.910149 83.0898509,103 79.5,103" id="Oval" stroke="#3084B3" stroke-width="4" stroke-linecap="round" transform="translate(68.000000, 109.500000) scale(-1, -1) translate(-68.000000, -109.500000) "></path>
+    </g>
+</svg>

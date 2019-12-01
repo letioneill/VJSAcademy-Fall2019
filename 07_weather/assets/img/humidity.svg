@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="14px" viewBox="0 0 10 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>humidity</title>
+    <desc>Created with Sketch.</desc>
+    <g id="humidity" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="blood-drop-copy" transform="translate(1.000000, 1.000000)" stroke="#FFFFFF">
+            <path d="M4.2135,0.3695 C4.16812473,0.295018952 4.08721434,0.249568251 4,0.249568251 C3.91278566,0.249568251 3.83187527,0.295018952 3.7865,0.3695 C2.992,1.6715 0.25,6.267 0.25,8.026 C0.25,10.0970678 1.92893219,11.776 4,11.776 C6.07106781,11.776 7.75,10.0970678 7.75,8.026 C7.75,6.267 5.008,1.671 4.2135,0.3695 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

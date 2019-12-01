@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>c02d</title>
+    <desc>Created with Sketch.</desc>
+    <g id="c02d" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sun" transform="translate(7.000000, 8.000000)">
+            <circle id="shine" fill-opacity="0.3" fill="#FFC72C" cx="35" cy="35" r="35"></circle>
+            <circle id="mass" fill="#FFC72C" cx="35" cy="35" r="25.5084746"></circle>
+            <path d="M35.5932203,15.4237288 C24.4539178,15.4237288 15.4237288,24.4539178 15.4237288,35.5932203" id="highlight" stroke="#FFFFFF" stroke-width="2.84745763"></path>
+        </g>
+        <path d="M29,111 C17.954305,111 9,101.59798 9,90 C9,78.4020203 17.954305,69 29,69 C30.4253194,69 31.8158151,69.1565523 33.1567416,69.4541739 C34.6795048,54.5929975 47.2359076,43 62.5,43 C75.5019305,43 86.5392679,51.4114225 90.467207,63.089462 C91.1365715,63.0299439 91.8148617,63 92.5,63 C105.478692,63 116,73.745166 116,87 C116,100.083925 105.748267,110.722485 93.000801,110.994658 L93,111 Z" id="cloud" fill="#FFFFFF"></path>
+    </g>
+</svg>

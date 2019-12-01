@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>t03d</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="40.3461538 86 49.7884615 86 42.1730769 96.6269767 52.5 96.6269767 36 118 43.9423077 100.794419 34.5 100.794419"></polygon>
+        <filter x="-83.3%" y="-46.9%" width="266.7%" height="193.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.78039217   0 0 0 0 0.172549024  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="t03d" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sun" transform="translate(13.000000, 14.000000)">
+            <circle id="shine" fill-opacity="0.3" fill="#FFC72C" cx="20" cy="20" r="20"></circle>
+            <circle id="mass" fill="#FFC72C" cx="20" cy="20" r="14.5762712"></circle>
+            <path d="M20.3389831,8.81355932 C13.9736673,8.81355932 8.81355932,13.9736673 8.81355932,20.3389831" id="highlight" stroke="#FFFFFF" stroke-width="1.62711864"></path>
+        </g>
+        <path d="M13,70 L13.0002062,69.9888709 C6.88080153,69.7158201 2,64.4526782 2,58 C2,51.372583 7.14872538,46 13.5,46 C14.0443455,46 14.5798575,46.0394649 15.1040517,46.1158022 C16.0402116,37.6141039 23.2477024,31 32,31 C39.3116135,31 45.5451334,35.6158673 47.9454982,42.0925404 C48.4547317,42.0312143 48.9738508,42 49.5,42 C56.9558441,42 63,48.2680135 63,56 C63,63.5581283 57.2246009,69.71738 50.000753,69.9905473 L50,70 L13,70 Z" id="cloud-copy" fill="#F1F2F3" opacity="0.9"></path>
+        <path d="M31,85 C30.8344287,84.9976544 30.6674742,85 30.5,85 C20.2827321,85 12,76.2695526 12,65.5 C12,54.7304474 20.2827321,46 30.5,46 C31.7583034,46 32.9872655,46.1324151 34.1750287,46.3847467 C35.7214124,32.663792 47.3653752,22 61.5,22 C73.7497964,22 84.1288935,30.0094156 87.6860888,41.0770444 C88.2837392,41.026089 88.8888922,41 89.5,41 C101.374122,41 111,50.8497355 111,63 C111,74.9789938 101.643583,84.7218583 90.0007737,84.9941498 L90,85 L31,85 Z" id="cloud" fill="#FFFFFF"></path>
+        <g id="Path-4">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFC72C" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <line x1="62.5" y1="107.875" x2="62.5" y2="89.5" id="Line-Copy" stroke="#3084B3" stroke-width="5" opacity="0.9" stroke-linecap="round"></line>
+        <line x1="75.5" y1="107.875" x2="75.5" y2="89.5" id="Line-Copy-2" stroke="#3084B3" stroke-width="5" opacity="0.9" stroke-linecap="round"></line>
+        <line x1="88.5" y1="107.875" x2="88.5" y2="89.5" id="Line-Copy-3" stroke="#3084B3" stroke-width="5" opacity="0.9" stroke-linecap="round"></line>
+    </g>
+</svg>

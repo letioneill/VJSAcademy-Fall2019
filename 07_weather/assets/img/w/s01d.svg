@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>s01d</title>
+    <desc>Created with Sketch.</desc>
+    <g id="s01d" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sun" transform="translate(9.000000, 17.000000)">
+            <circle id="shine" fill-opacity="0.3" fill="#FFC72C" cx="30" cy="30" r="30"></circle>
+            <circle id="mass" fill="#FFC72C" cx="30" cy="30" r="21.8644068"></circle>
+            <path d="M30.5084746,13.220339 C20.9605009,13.220339 13.220339,20.9605009 13.220339,30.5084746" id="highlight" stroke="#FFFFFF" stroke-width="2.44067797"></path>
+        </g>
+        <path d="M41,90 C31.5663986,89.7052197 24,81.3119617 24,71 C24,60.5065898 31.8350169,52 41.5,52 C42.8057895,52 44.0781759,52.1552743 45.3023499,52.4497444 C47.21449,39.7369328 57.9916083,30 71,30 C82.473273,30 92.2108237,37.5744241 95.661674,48.0847753 C96.2670493,48.0281664 96.8803136,48 97.5,48 C108.821837,48 118,57.4020203 118,69 C118,80.5979797 108.821837,90 97.5,90 C97.3329016,90 97.1662702,89.997952 97.0001283,89.9938791 L97,90 L41,90 Z" id="cloud" fill="#FFFFFF"></path>
+        <circle id="Oval" fill="#F2F2F2" opacity="0.602167039" cx="53" cy="98" r="3"></circle>
+        <circle id="Oval-Copy-9" fill="#F2F2F2" opacity="0.602167039" cx="35" cy="98" r="3"></circle>
+        <circle id="Oval-Copy-4" fill="#F2F2F2" cx="62" cy="83" r="3"></circle>
+        <circle id="Oval-Copy-7" fill="#F2F2F2" cx="47" cy="83" r="3"></circle>
+        <circle id="Oval-Copy-5" fill="#F2F2F2" cx="79" cy="83" r="3"></circle>
+        <circle id="Oval-Copy-6" fill="#F2F2F2" cx="96" cy="83" r="3"></circle>
+        <circle id="Oval" fill="#F2F2F2" opacity="0.602167039" cx="69" cy="98" r="3"></circle>
+        <circle id="Oval-Copy-11" fill="#F2F2F2" opacity="0.399925595" cx="25.5" cy="108.5" r="2.5"></circle>
+        <circle id="Oval-Copy-12" fill="#F2F2F2" opacity="0.399925595" cx="43.5" cy="108.5" r="2.5"></circle>
+        <circle id="Oval-Copy-13" fill="#F2F2F2" opacity="0.399925595" cx="62.5" cy="108.5" r="2.5"></circle>
+        <circle id="Oval-Copy-14" fill="#F2F2F2" opacity="0.399925595" cx="78.5" cy="108.5" r="2.5"></circle>
+        <circle id="Oval-Copy-15" fill="#F2F2F2" opacity="0.399925595" cx="96.5" cy="108.5" r="2.5"></circle>
+        <circle id="Oval-Copy-16" fill="#F2F2F2" opacity="0.399925595" cx="112.5" cy="108.5" r="2.5"></circle>
+        <circle id="Oval" fill="#F2F2F2" opacity="0.602167039" cx="86" cy="98" r="3"></circle>
+        <circle id="Oval" fill="#F2F2F2" opacity="0.602167039" cx="102" cy="98" r="3"></circle>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>a01d</title>
+    <desc>Created with Sketch.</desc>
+    <g id="a01d" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sun" transform="translate(9.000000, 17.000000)">
+            <circle id="shine" fill-opacity="0.3" fill="#FFC72C" cx="30" cy="30" r="30"></circle>
+            <circle id="mass" fill="#FFC72C" cx="30" cy="30" r="21.8644068"></circle>
+            <path d="M30.5084746,13.220339 C20.9605009,13.220339 13.220339,20.9605009 13.220339,30.5084746" id="highlight" stroke="#FFFFFF" stroke-width="2.44067797"></path>
+        </g>
+        <rect id="Rectangle" fill="#F2F2F2" opacity="0.75" x="4" y="83" width="15" height="9" rx="4.5"></rect>
+        <rect id="Rectangle-Copy-2" fill="#F2F2F2" opacity="0.5" x="67" y="111" width="41" height="9" rx="4.5"></rect>
+        <rect id="Rectangle-Copy" fill="#F2F2F2" opacity="0.5" x="20" y="97" width="63" height="9" rx="4.5"></rect>
+        <rect id="Rectangle-Copy-3" fill="#F2F2F2" opacity="0.5" x="92" y="97" width="15" height="9" rx="4.5"></rect>
+        <path d="M37,92 C27.0140772,91.7066089 19,82.8650818 19,72 C19,60.954305 27.2827321,52 37.5,52 C38.7757469,52 40.0213334,52.1396019 41.2244018,52.405446 C42.9570701,38.6392814 54.5082533,28 68.5,28 C80.6444089,28 90.9501682,36.0153261 94.5927674,47.1337496 C95.3838812,47.0451253 96.1867879,47 97,47 C109.150264,47 119,57.0735931 119,69.5 C119,81.9264069 109.150264,92 97,92 L97,92 L37,92 Z" id="cloud" fill="#FFFFFF"></path>
+    </g>
+</svg>
