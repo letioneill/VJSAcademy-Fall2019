@@ -34,3 +34,4 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 
 ### 07. Weather App
 18. Weather App  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/07_weather/18-weather-app.html)
+19. Weather App Plugin  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/07_weather/19-weather-app-plugin.html)
