@@ -90,6 +90,18 @@ h1 {
   }
 }
 
+.temp-wrapper {
+  .temp-deg:first-child {
+    .temp-now {
+      margin-top: .25em;
+
+      @media (min-width: 800px) {
+        margin-top: .75em;
+      }
+    }
+  }
+}
+
 .temp-icon {
   
   img {
@@ -160,31 +172,45 @@ h1 {
         display: block;
         margin: 0 auto;
       }
-    }
 
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3) {
-      display:none;
-
-      @media (min-width: 800px) {
-        display: list-item;
-      }
-    }
-
-    &:nth-child(1) {
-      img {
+      &.i-feels {
         width: 17px;
         @media (min-width: 800px) {
           width: 21px
         }
       }
-    }
 
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4) {
-      img {
+      &.i-sunrise {
+        @media (min-width: 800px) {
+          margin-top: 10px;
+        }
+      }
+
+      &.i-vis {
+        @media (min-width: 800px) {
+          margin-top: 12px;
+        }
+      }
+
+      &.i-wind {
+        width: 32px;
+
+        @media (min-width: 800px) {
+          width: 36px;
+          margin-top: 6px;
+        }
+      }
+      &.i-humid {
+        width: 19px;
+
+        @media (min-width: 800px) {
+          width: 23px;
+        }
+      }
+
+      &.i-sunrise, 
+      &.i-sunset, 
+      &.i-vis {
         width: 30px;
 
         @media (min-width: 800px) {
@@ -193,40 +219,60 @@ h1 {
       }
     }
 
-    &:nth-child(2) {
-      img {
-        @media (min-width: 800px) {
-          margin-top: 10px;
-        }
-      }
-    }
-
-    &:nth-child(4) {
-      img {
-        @media (min-width: 800px) {
-          margin-top: 12px;
-        }
-      }
-    }
-
-    &:nth-child(5) {
-      img {
-        width: 32px;
-
-        @media (min-width: 800px) {
-          width: 36px;
-          margin-top: 6px;
-        }
-      }
-    }
-
+    &:nth-child(4),
+    &:nth-child(5),
     &:nth-child(6) {
-      img {
-        width: 19px;
+      display:none;
 
-        @media (min-width: 800px) {
-          width: 23px;
-        }
+      @media (min-width: 800px) {
+        display: list-item;
+      }
+    }
+  }
+
+  &.detail-1, &.detail-2, &.detail-3 {
+    @media (min-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &.detail-1 {
+    @media (min-width: 800px) {
+      li {
+        font-size: 1.75em;
+        padding-top: 2em;
+      }
+
+      span {
+        font-size: 3em;
+      }
+
+      img {
+        width: 30% !important;
+      }
+    }
+  }
+
+  &.detail-2 {
+    @media (min-width: 800px) {
+      li {
+        font-size: 1.4em;
+      }
+
+      span {
+        font-size: 2.75em;
+      }
+
+      img {
+        width: 20% !important;
+      }
+    }
+  }
+
+  &.detail-3 {
+    @media (min-width: 800px) {
+      span {
+        font-size: 3em;
       }
     }
   }

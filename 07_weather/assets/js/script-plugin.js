@@ -9,6 +9,8 @@ var getWeather = function (options) {
     apiKey: null,
     selector: '#app',
     convertTemp: true,
+    location: '{{city}}, {{state}}',
+    description: '{{description}}',
     showFeels: true,
     showSunrise: true,
     showSunset: true,
@@ -38,13 +40,6 @@ var getWeather = function (options) {
     return (parseFloat(temp - 32) * 5 / 9);
   };
 
-  var kToM = function (dist) {
-    return (parseFloat(dist) * 0.62137);
-  }
-
-  var mToS = function (speed) {
-    return (parseFloat(speed) * 2.23694)
-  }
   // -- Convert fahrenheit to celcius
   var fToC = function (temp) {
     if (settings.convertTemp) {
@@ -55,7 +50,17 @@ var getWeather = function (options) {
     return temp;
   };
 
-  // -- Get icon for current weather
+  // -- Kilometers to Miles
+  var kToM = function (dist) {
+    return (parseFloat(dist) * 0.62137);
+  }
+
+
+  var mToS = function (speed) {
+    return (parseFloat(speed) * 2.23694)
+  }
+
+  // -- Get Icon
   var getIcon = function (weather) {
     if (!settings.showIcon) return '';
 
@@ -65,33 +70,102 @@ var getWeather = function (options) {
         '<image class="w-icon w-icon_' + weather.weather.icon + '" src="assets/img/w/' + weather.weather.icon +'.svg">' +
       '</div>';
     return html;
+  };
+
+  // -- Get Location
+  var getLocation = function (weather) {
+    return settings.location
+      .replace('{{city}}', sanitizeHTML(weather.city_name))
+      .replace('{{state}}', sanitizeHTML(weather.state_code));
+  };
+
+  // -- Get Description
+  var getDescription = function (weather) {
+    return settings.description
+      .replace('{{description}}', sanitizeHTML(weather.weather.description).toLowerCase());
+  };
+
+  // -- Get Feels Temp
+  var getFeels = function (weather) {
+    if (!settings.showFeels) return '';
+    var html = 
+      '<li><span><image class="d-icon i-feels" src="assets/img/feels.svg">' + Math.round(fToC(sanitizeHTML(weather.app_temp))) + '<small>&deg;</small></span>Feels like</li>';
+    return html;
+  };
+
+  // - Get Sunrise Time
+  var getSunrise = function (weather) {
+    if (!settings.showSunrise) return '';
+    var html = 
+      '<li><span><image class="d-icon i-sunrise" src="assets/img/sunrise.svg">' + sanitizeHTML(weather.sunrise) + '</span>Sunrise</li>';
+    return html;
+  };
+
+  // - Get Sunset Time
+  var getSunset = function (weather) {
+    if (!settings.showSunset) return '';
+    var html = 
+      '<li><span><image class="d-icon i-sunset" src="assets/img/sunset.svg">' + sanitizeHTML(weather.sunset) + '</span>Sunset</li>';
+    return html;
+  };
+
+  // - Get Visibility Distance
+  var getVis = function (weather) {
+    if (!settings.showVisibility) return '';
+    var html = 
+      '<li><span><image class="d-icon i-vis" src="assets/img/visibility.svg">' + Math.round(kToM(sanitizeHTML(weather.vis))) + ' mi' + ' </span>Visibility</li>';
+    return html;
+  };
+
+  // -- Get Wind speed and direction
+  var getWind = function (weather) {
+    if (!settings.showWind) return '';
+    var html =
+      '<li><span><image class="d-icon i-wind" src="assets/img/wind.svg">' + Math.round(kToM(weather.wind_spd)) + ' mi' + '</span>Wind ' + weather.wind_cdir + '</li>';
+    return html;
+  };
+
+  // -- Get Humidity percentage
+  var getHumidity = function (weather) {
+    if (!settings.showHumidity) return '';
+    var html =
+      '<li><span><image class="d-icon i-humid" src="assets/img/humidity.svg">' + Math.round(kToM(weather.rh)) + '%' + '</span>Humidity</li>';
+    return html;
   }
 
-  
   
   // --------- Render the weather data into the DOM
   var renderWeather = function (weather) {
     app.innerHTML =
       '<div class="temp">' +
-        '<div class="location"><image src="assets/img/pin.svg">' + sanitizeHTML(weather.city_name) + ', ' + sanitizeHTML(weather.state_code) +'</div>' +
+        '<div class="location"><image src="assets/img/pin.svg">' + getLocation(weather) +'</div>' +
         '<div class="temp-wrapper">' +
           getIcon(weather) +
           '<div class="temp-deg">' +
             '<span class="temp-now">' + Math.round(fToC(sanitizeHTML(weather.temp))) + '</span>' +
-            '<span class="temp-desc">' + sanitizeHTML(weather.weather.description).toLowerCase() + '</span>' +
+            '<span class="temp-desc">' + getDescription(weather) + '</span>' +
           '</div>' +
         '</div>' +
       '</div>' +
       '<ul class="details">' +
-        '<li><span><image class="d-icon" src="assets/img/feels.svg">' + Math.round(fToC(sanitizeHTML(weather.app_temp))) + '<small>&deg;</small></span>Feels like</li>' +
-        '<li><span><image class="d-icon" src="assets/img/sunrise.svg">' + sanitizeHTML(weather.sunrise) + '</span>Sunrise</li>' +
-        '<li><span><image class="d-icon" src="assets/img/sunset.svg">' + sanitizeHTML(weather.sunset) + '</span>Sunset</li>' +
-        '<li><span><image class="d-icon" src="assets/img/visibility.svg">' + Math.round(kToM(weather.vis)) + ' mi' + ' </span>Visibility</li>' +
-        '<li><span><image class="d-icon" src="assets/img/wind.svg">' + Math.round(kToM(weather.wind_spd)) + ' mi' + '</span>Wind ' + weather.wind_cdir + '</li>' +
-        '<li><span><image class="d-icon" src="assets/img/humidity.svg">' + Math.round(kToM(weather.rh)) + '%' + '</span>Humidity</li>' +
+        getFeels(weather) +
+        getSunrise(weather) +
+        getSunset(weather) +
+        getVis(weather) +
+        getWind(weather) +
+        getHumidity(weather) +
       '</ul>';
+
+    // -- Add Class to body for part of day value
     var body = document.querySelector('#weather');
     body.classList.add(sanitizeHTML(weather.pod) + '-time');
+
+    // -- Add to UL with number of children
+    var detailUl = document.querySelectorAll(".details");
+    var detailItems = Array.prototype.slice.call(document.querySelectorAll(".d-icon"));
+    var detailNums = detailItems.length;
+    detailUl[0].classList.add("detail-" + detailNums);
+
   };
 
   // --------- Render message when there's no weather data

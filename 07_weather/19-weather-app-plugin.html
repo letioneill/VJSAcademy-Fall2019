@@ -9,12 +9,27 @@
     <div id="app">Checking the weather near you...</div>
   <script src="assets/js/script-plugin.js" type="text/javascript"></script>
   <script>
+
     getWeather({
-      apiKey: '',
-      showIcon: false,
-      convertTemp: false,
-      description: '{{conditions}}, {{temp}} degrees. Ick.'
+      apiKey: 'aa294306b6e744c683ba3ae4a74fb531',
+      // convertTemp: false,
+      // location: '{{city}}, {{state}}',
+      // description: '☃ {{description}}',
+      // showFeels: false,
+      // showSunrise:false,
+      // showSunset: false,
+      // showVisibility: false,
+      // showWind: false,
+      // showHumidity: false,
+      noWeather: 'No weather available where you are!',
+      showIcon: false
     });
+
+    // -- Check Temp Toggle State
+    
+    var tempItem = document.querySelectorAll(".temp-now");
+  
+
   </script>
 </body>
 </html>
