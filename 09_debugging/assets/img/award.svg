@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>award</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <polygon points="56.97 77.36 43.03 77.36 48.03 50.89 52.97 50.89 56.97 77.36" fill="#f1b81b"/>
+      <path d="M28.23,8.49V36.62a21.77,21.77,0,0,0,43.54,0V8.49Z" fill="#f1b81b"/>
+      <path d="M66.53,8.49V36.62c0,12-2.5,12.59-16.53,21.77A21.77,21.77,0,0,0,71.77,36.62V8.49Z" fill="#ca9b2c"/>
+      <rect x="28.53" y="67.31" width="42.94" height="27.53" fill="#89461f"/>
+      <rect x="35.97" y="74.5" width="28.07" height="13.14" fill="#f1b81b"/>
+      <path d="M71.47,16.7a10,10,0,1,1,0,20" fill="none" stroke="#f1b81b" stroke-miterlimit="10" stroke-width="5"/>
+      <path d="M30.49,16.7a10,10,0,1,0,0,20" fill="none" stroke="#f1b81b" stroke-miterlimit="10" stroke-width="5"/>
+    </g>
+  </g>
+</svg>

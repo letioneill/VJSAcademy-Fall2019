@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>monster6</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect width="200" height="200" fill="#f2e4c3"/>
+      <ellipse cx="95.25" cy="183.4" rx="78.03" ry="9.03" fill="#231f20" opacity="0.3"/>
+      <circle cx="91.66" cy="93.63" r="46.17" fill="#e5306d"/>
+      <path d="M137.83,93.63a46.17,46.17,0,0,1-92.34,0c14.77,23.72,21.75,36.16,47.24,36.16S129,102.78,137.83,93.63Z" fill="#b8285f"/>
+      <g>
+        <circle cx="115.65" cy="81.59" r="7.38" fill="#231f20"/>
+        <circle cx="114.12" cy="79.06" r="1.85" fill="#fff"/>
+      </g>
+      <g>
+        <circle cx="73.14" cy="81.59" r="7.38" fill="#231f20"/>
+        <circle cx="71.6" cy="79.06" r="1.85" fill="#fff"/>
+      </g>
+      <polygon points="77.88 106 81.59 99.56 85.31 106 77.88 106" fill="#fff"/>
+      <polygon points="85.31 106 89.02 99.56 92.73 106 85.31 106" fill="#fff"/>
+      <polygon points="92.54 106 96.25 99.56 99.97 106 92.54 106" fill="#fff"/>
+      <polygon points="99.61 106 103.32 99.56 107.03 106 99.61 106" fill="#fff"/>
+      <path d="M68.75,118.53q-14.23,27.91-5.49,55.84" fill="none" stroke="#e5306d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+      <path d="M114.32,118.53c15.51,18.09,19.63,36.69,11.33,55.84" fill="none" stroke="#e5306d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+      <path d="M84.59,129.79c2.06,21.15.86,35.76-3.26,44.58" fill="none" stroke="#e5306d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+      <path d="M99.61,128.24c8.44,8.37,10,23.43,3.71,46.13" fill="none" stroke="#e5306d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+      <path d="M53.36,99.77c10,11.58-13.56,22.91-19.19,34.47s-8.6,24,11.32,40.13" fill="none" stroke="#e5306d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+      <path d="M129,102.78c-2,10,17.5,30.47,17.5,30.47s21.62,26.59-2.72,41.12" fill="none" stroke="#e5306d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+      <circle cx="95.84" cy="40.99" r="22.21" fill="#f1b81b"/>
+      <path d="M118.05,41a22.21,22.21,0,1,1-44.42,0c9.82,9.75,11.26,14.79,23.53,14.79S110.65,47.46,118.05,41Z" fill="#d2a02a"/>
+      <g id="eye-third">
+        <circle cx="93.75" cy="35.52" r="11.6" fill="#fff"/>
+        <g>
+          <circle cx="95.25" cy="36.27" r="7.38" fill="#231f20"/>
+          <circle cx="93.72" cy="33.73" r="1.85" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

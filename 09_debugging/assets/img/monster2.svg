@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>monster2</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect width="200" height="200" fill="#e5306d"/>
+      <rect x="74.83" y="66.44" width="44.67" height="169.76" rx="22.33" transform="translate(248.49 54.17) rotate(90)" fill="#f1b81b"/>
+      <g>
+        <circle cx="56.84" cy="66.87" r="20.21" fill="#fff"/>
+        <circle cx="56.84" cy="74.76" r="12.06" fill="#231f20"/>
+        <circle cx="59.74" cy="70.81" r="3.95" fill="#fff"/>
+      </g>
+      <g>
+        <circle cx="129.85" cy="66.87" r="20.21" fill="#fff"/>
+        <circle cx="129.85" cy="74.76" r="12.06" fill="#231f20"/>
+        <circle cx="133.21" cy="70.81" r="3.95" fill="#fff"/>
+      </g>
+      <polygon points="60.01 128.99 47.61 150.47 35.21 128.99 60.01 128.99" fill="#fff"/>
+      <polygon points="93.99 128.99 81.59 150.47 69.19 128.99 93.99 128.99" fill="#fff"/>
+      <polygon points="128.06 128.99 115.65 150.47 103.25 128.99 128.06 128.99" fill="#fff"/>
+      <polygon points="157.69 128.99 145.29 150.47 132.89 128.99 157.69 128.99" fill="#fff"/>
+      <polygon points="51.28 173.46 63.68 151.98 76.08 173.46 51.28 173.46" fill="#fff"/>
+      <polygon points="84.76 173.46 97.16 151.98 109.56 173.46 84.76 173.46" fill="#fff"/>
+      <polygon points="117.45 173.46 129.85 151.98 142.25 173.46 117.45 173.46" fill="#fff"/>
+    </g>
+  </g>
+</svg>

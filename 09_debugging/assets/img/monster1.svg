@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>monster1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect width="200" height="200" fill="#c5bcac"/>
+      <path d="M153.08,20.54s33.87.75,35.09,50.27S160,141.33,160,141.33" fill="none" stroke="#b54599" stroke-linecap="round" stroke-miterlimit="10" stroke-width="13"/>
+      <path d="M29.3,173.26c0-35.27,32.23-63.86,72-63.86s72,28.59,72,63.86" fill="#5d6563"/>
+      <rect x="34.17" y="16.33" width="131.66" height="131.66" rx="65.83" fill="#5d6563"/>
+      <path d="M100,148h0c58.82-26.55,49.65-72.49,49.65-72.49s-3.25-40-49.65-59.17h0a65.83,65.83,0,0,1,65.83,65.83h0A65.83,65.83,0,0,1,100,148Z" fill="#3f4341"/>
+      <circle cx="100" cy="118.99" r="28.99" fill="#a7ad96"/>
+      <path d="M107.53,75.5a29,29,0,1,1-58,0" fill="#a7ad96"/>
+      <path d="M149.65,75.5a29,29,0,1,1-58,0" fill="#a7ad96"/>
+      <g id="eye-g-l">
+        <circle cx="76.33" cy="90" r="5" fill="#231f20"/>
+        <circle cx="75.83" cy="87.5" r="1.5" fill="#fff"/>
+      </g>
+      <g id="eye-g-r">
+        <circle cx="120.65" cy="90" r="5" fill="#231f20"/>
+        <circle cx="119.83" cy="88.5" r="1.5" fill="#fff"/>
+      </g>
+      <circle cx="36.62" cy="90" r="12.92" fill="#5d6563"/>
+      <circle cx="165.83" cy="90" r="12.92" fill="#3f4341"/>
+      <path d="M103.32,108.42a5.5,5.5,0,0,1,11,0" fill="#e5306d"/>
+      <path d="M86.16,108.42a5.5,5.5,0,1,1,11,0" fill="#e5306d"/>
+      <polygon points="85.42 127.87 89.14 121.44 92.85 127.87 85.42 127.87" fill="#fff"/>
+      <polygon points="92.85 127.87 96.56 121.44 100.28 127.87 92.85 127.87" fill="#fff"/>
+      <polygon points="99.61 127.87 103.32 121.44 107.03 127.87 99.61 127.87" fill="#fff"/>
+      <polygon points="107.15 127.87 110.86 121.44 114.58 127.87 107.15 127.87" fill="#fff"/>
+      <path d="M27.83,182.76a27.47,27.47,0,0,1,54.93,0" fill="#b54599"/>
+      <path d="M119.65,182.76a27.47,27.47,0,0,1,54.93,0" fill="#b54599"/>
+      <path d="M52.64,130.87S70.46,151.85,100,151c0,0,23.06-.32,29.65-10.05" fill="none" stroke="#3f4341" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+    </g>
+  </g>
+</svg>

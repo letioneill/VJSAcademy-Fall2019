@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>game</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path d="M83.09,81.07H77.23a9,9,0,0,1-7.75-4.42l-4.78-8.1A9,9,0,0,0,57,64.12H44.63a9,9,0,0,0-7.75,4.43l-4.78,8.1a9,9,0,0,1-7.75,4.42H18.49a9,9,0,0,1-9-9v-41a7,7,0,0,1,7-7h68.6a7,7,0,0,1,7,7v41A9,9,0,0,1,83.09,81.07Z" fill="#a7ad96"/>
+      <rect x="71.44" y="33.44" width="6.14" height="19.14" fill="#d7df23"/>
+      <rect x="71.44" y="33.44" width="6.14" height="19.14" transform="translate(117.52 -31.51) rotate(90)" fill="#d7df23"/>
+      <circle cx="29.36" cy="44.65" r="7.92" fill="#e91476"/>
+    </g>
+  </g>
+</svg>

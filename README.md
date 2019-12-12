@@ -36,6 +36,9 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 18. Weather App  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/07_weather/18-weather-app.html)
 19. Weather App Plugin  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/07_weather/19-weather-app-plugin.html)
 
-### 07. Dom Library
+### 08. Dom Library
 18. Helper Library  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/08_helper-library/20-helper-library.html)
 19. Dom Manipulation Library  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/08_helper-library/21-dom-manipulation-library.html)
+
+### 09. Debugging
+18. Debugging broken code  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/09_debugging/23-debugging-broken-code.html)

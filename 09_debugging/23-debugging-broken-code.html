@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monsters!</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <h1>Monster<span>Shuffle</span></h1>
+  <p class="info">Click doors to find all monsters. <em>Avoid the sock!</em></p>
+  <section class="statistics">
+    <h3>Score</h3>
+    <ul class="scoreboard">
+      <li class="score-wins">
+        <div class="stats">
+          <div class="thumb">
+            <img alt="trophy icon" src="assets/img/award.svg">
+          </div>
+          <div id="scoreWins">0</div>
+        </div>
+        <p>Wins</p>
+      </li>
+      <li class="monsters-found">
+        <div class="stats">
+          <div class="thumb">
+            <img alt="monster icon" src="assets/img/monster.svg">
+          </div>
+          <div id="monstersFound">0</div>
+        </div>
+        <p>Monsters Found</p>
+      </li>
+      <li class="games-played">
+        <div class=stats>
+          <div class="thumb">
+            <img alt="controller icon" src="assets/img/game.svg">
+          </div>
+          <div id="gamesPlayed">0</div>
+        </div>
+        <p>Games Played</p>
+      </li>
+    </ul>
+  </section>
+
+  <div id="app"></div>
+  <noscript>
+    <p>
+      <strong>To play this game, please enable JavaScript in your browser.</strong>
+    </p>
+  </noscript>
+
+  <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"></script>
+  <script src="assets/js/script.js" type="text/javascript"></script>
+</body>
+</html>

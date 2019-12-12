@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>monster3</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <rect width="200" height="200" fill="#00a089"/>
+      <rect x="5.98" y="178.94" width="188.38" height="14" rx="7" fill="#231f20" opacity="0.3"/>
+      <rect x="54.54" y="125.99" width="11.5" height="49.94" fill="#f1b81b"/>
+      <rect x="133.04" y="125.99" width="11.5" height="49.94" fill="#f1b81b"/>
+      <rect x="5.63" y="41.95" width="188.73" height="90" rx="45" fill="#f1b81b"/>
+      <path d="M149.37,132H50.63a45,45,0,0,1-45-45h0C11.5,102,21.19,121.8,46,121.8l103.33-.56c24.85,0,27.49-9.74,45-34.29h0A45,45,0,0,1,149.37,132Z" fill="#ca9b2c"/>
+      <circle cx="49.54" cy="85.5" r="5.75" fill="#231f20"/>
+      <circle cx="149.55" cy="85.5" r="5.75" fill="#231f20"/>
+      <circle cx="150.86" cy="83.75" r="2" fill="#fff"/>
+      <circle cx="49.54" cy="83.75" r="2" fill="#fff"/>
+      <polygon points="99.67 103.69 92 116.99 84.32 103.69 99.67 103.69" fill="#fff"/>
+      <polygon points="116.29 103.69 108.61 116.99 100.93 103.69 116.29 103.69" fill="#fff"/>
+      <polygon points="132.9 103.69 125.22 116.99 117.55 103.69 132.9 103.69" fill="#fff"/>
+      <polygon points="83.06 103.69 75.38 116.99 67.7 103.69 83.06 103.69" fill="#fff"/>
+      <path d="M39.26,188.45a21,21,0,0,1,42.07,0" fill="#ee3577"/>
+      <path d="M117.76,188.45a21,21,0,0,1,42.07,0" fill="#ee3577"/>
+      <path d="M63.38,52.87s-5-32.1-19.6-32.1" fill="none" stroke="#f1b81b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="12"/>
+      <path d="M125.3,46.17s15.17-29.3,27.78-29.3" fill="none" stroke="#f1b81b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="12"/>
+      <line x1="55.08" y1="40.95" x2="65.08" y2="40.95" fill="none" stroke="#ca9b2c" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.83"/>
+      <line x1="122.5" y1="40.95" x2="134.5" y2="40.95" fill="none" stroke="#ca9b2c" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.83"/>
+      <line x1="133.8" y1="132.95" x2="143.8" y2="132.95" fill="none" stroke="#a57c2c" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.83"/>
+      <line x1="55.3" y1="132.95" x2="65.3" y2="132.95" fill="none" stroke="#a57c2c" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.83"/>
+      <line x1="117.96" y1="186.82" x2="160.03" y2="186.82" fill="none" stroke="#c4326d" stroke-miterlimit="10" stroke-width="4"/>
+      <line x1="39.26" y1="186.82" x2="81.33" y2="186.82" fill="none" stroke="#c4326d" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+  </g>
+</svg>
