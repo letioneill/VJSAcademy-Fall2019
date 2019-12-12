@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Helper Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Helper Library</h1>
+
+  <p>All of the fun here happens in the console. <em>🎉</em></p>
+
+  <p>
+    <button class="btn-blue" id="button-1">Button 1</button>
+    <button class="btn-blue" id="button-2">Button 2</button>
+    <button class="btn-blue" id="button-3">Button 3</button>
+  </p>
+
+  <script>
+    var _ = (function () {
+
+    // Create a helper library with public methods you can use to…
+
+    // 1. Convert a NodeList to an array.
+    // 2. Get the first matching element in the DOM.
+    // 3. Get all matching elements in the DOM as an array.
+    // 4. Add a class to all elements in an array.
+    // 5. Remove a class from all elements in an array.
+    // For testing purposes, you can try removing the .btn-blue class and adding the .btn-purple class to your elements.
+
+    // Holds our public methods
+    var methods = {};
+
+    //
+    // Methods
+    //
+
+    /**
+     * Convert array-like object into an array
+     * @param {*} list An array-like object (ex. Nodelist)
+     * @return {Array}    An array
+     */
+     methods.toArray = function (list) {
+      return Array.prototype.slice.call(list);
+     };
+
+     /**
+      * Get the first element that matches a selector
+      * @param {String} selector The selector
+      * @return {Node} The matching element
+      */
+      methods.get = function (selector) {
+        return document.querySelector(selector);
+      };
+
+      /**
+       * Get all elements that match a selector
+       * @param {String} selector The selector
+       * @return {Array}  The matching elements
+       */
+       methods.getAll = function (selector) {
+        return methods.toArray(document.querySelectorAll(selector));
+       }
+
+       /**
+        * Add a class to all elements in an array
+        * @param {Array} elems  The elements
+        * @param {String} className  The class to add
+        */
+        methods.addClass = function (elems, className) {
+          elems.forEach(function (elem) {
+            elem.classList.add(className);
+          });
+        };
+
+        /**
+        * Remove a class from all elements in an array
+        * @param {Array} elems  The elements
+        * @param {String} className  The class to remove
+        */
+        methods.removeClass = function (elems, className) {
+          elems.forEach(function (elem) {
+            elem.classList.remove(className);
+          });
+        };
+
+          // help method to list available options
+        methods.help = function () {
+          var arr = Object.keys(methods);
+          arr.forEach(function (i) {
+            console.log("%c." + i + "()\n", "font-size: 1.2em;color: white; background-color:fuchsia;");
+          })
+          return;
+        };
+
+    // Return public methods
+    return methods;
+
+  })();
+
+// TEST PUBLIC METHODS
+  // _.toArray()
+var arr = _.toArray(document.querySelectorAll('button'));
+console.log('_.toArray()', arr);
+
+// _.get()
+var btn = _.get('#button-2');
+console.log('_.get()', btn);
+
+// _.get()
+var btns = _.getAll('button');
+console.log('_.getAll()', btns);
+
+// _.addClass()
+_.addClass(btns, 'btn-purple');
+
+// _.removeClass()
+_.removeClass(btns, 'btn-blue');
+
+console.log('%c Oh my heavens! ', 'background: #222; color: #bada55');
+
+var emptyArray = []
+
+// Checks whether selector is in the DOM
+function isHere(data){
+  if (!data || !data.length) {
+     console.log("Not in the DOM");
+     return;
+  } else {
+     return data; 
+    }
+  }
+
+
+  </script>
+</body>
+</html>

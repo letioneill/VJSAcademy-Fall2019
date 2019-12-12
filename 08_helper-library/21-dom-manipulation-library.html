@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>DOM Manipulation Library</h1>
+
+  <p>All of the fun here happens in the console. <em>🎉</em></p>
+
+  <p>
+    <button class="btn-blue" id="button-1">Button 1</button>
+    <button class="btn-blue" id="button-2">Button 2</button>
+    <button class="btn-blue" id="button-3">Button 3</button>
+  </p>
+
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <script>
+    var $ = (function () {
+     
+      /**
+       * The constructor object
+       * @param {String} selector The selector to use
+       */
+      var Constructor = function (selector) {
+        this.elems = document.querySelectorAll(selector);
+      };
+
+      /**
+       * Get an immutable copy of the matching elements
+       * @return {Array} The elements
+       */
+      Constructor.prototype.items = function () {
+        return Array.prototype.slice.call(this.elems);
+      };
+
+      /**
+       * Get the first item in a set of elements
+       * @return {*} The first item
+       */
+      Constructor.prototype.first = function () {
+        return this.elems[0];
+      };
+
+      /**
+       * Get the last item in a set of elements
+       * @return {*} The last item
+       */
+      Constructor.prototype.last = function () {
+        return this.elems[this.elems.length - 1];
+      };
+
+      /**
+       * Add a class to every item in a set of elements
+       * @param {String} className The class to add
+       */
+      Constructor.prototype.addClass = function (className) {
+        this.items().forEach(function (elem) {
+          elem.classList.add(className);
+        });
+      };
+
+      /**
+       * Remove a class to every item in a set of elements
+       * @param {String} className The class to remove
+       */
+      Constructor.prototype.removeClass = function (className) {
+        this.items().forEach(function (elem) {
+          elem.classList.remove(className);
+        });
+      };
+
+      Constructor.prototype.help = function() {
+        for (var key in this) {
+          console.log("%c" + key + "\n\n", "font-size: 1.5em;", this[key]);
+        }
+      };
+
+      // Return the constructor object
+      return Constructor;
+
+    })();
+
+    // Create new instances
+    var btns = new $('button');
+    var list = new $('ul');
+
+    // $.items()
+    console.log('$.items()', btns.items());
+    console.log('$.items()', list.items());
+
+    // $.first()
+    console.log('$.first()', btns.first());
+
+    // $.last()
+    console.log('$.last()', btns.last());
+
+    // $.addClass()
+    btns.addClass('btn-purple');
+
+    // $.removeClass()
+    btns.removeClass('btn-blue');
+
+    // Helper - 🎩 Kieran Barker
+    // Display in console with 'new $().help();''
+    console.log('$.help()', list.items());
+  </script>
+</body>
+</html>

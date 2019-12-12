@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,700,900&display=swap');
+
+// ------- Variables
+
+// -- Colors
+$bl: #000;
+$dgr: #222;
+$mgr: #CBCEE4;
+$lgr: #ECEDF4;
+$wt:#fff;
+$txt: #333;
+
+// -- Daytime
+$dayb0: #DEEFF8;
+$dayb1: #B6E2FB;
+$dayb2: #5CACD9;
+$dayb3: #3084B3;
+$dayb4: #064C74;
+
+// -- Nighttime
+$niteb0: #6C68AA;
+$niteb1: #484481;
+$niteb2: #2F2C5E;
+$niteb3: #292749;
+
+// -- Fonts
+$pop: 'Poppins', sans-serif;
+
+// -------
+
+*, *:before, *:after {
+  margin:0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1em auto;
+  max-width: 40em;
+  width: 88%;
+  height: 100vh;
+  font-family: $pop;
+  background: $lgr;
+  text-align: center;
+
+  @media (min-width: 800px) {
+    margin: 0 auto;
+  }
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 400;
+  color: darken($mgr, 10%);
+  line-height: .9;
+  padding: 1em 0;
+  margin: .75em auto 1em;
+}
+
+p {
+  margin: 2em 0;
+
+  em {
+    font-size: 2em;
+  }
+}
+
+button {
+  font-size: 1em;
+  padding: 1em 2em;
+  border: none;
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.btn-blue {
+  background-color: royalblue;
+  color: #ffffff;
+}
+
+.btn-purple {
+  background-color: indigo;
+  color: #ffffff;
+}
+
+ul {
+  text-align: left;
+  width: 60px;
+  margin: 0 auto;
+}
