@@ -19,6 +19,18 @@ body {
     margin: 0 auto;
   }
 }
+body.d-time {
+  background: #f3fbff;
+}
+body.d-time h1 {
+  color: #98c0d6;
+}
+body.n-time {
+  background: #ECEDF4;
+}
+body.n-time h1 {
+  color: #a9aed3;
+}
 
 h1 {
   font-size: 1.2em;
@@ -263,3 +275,5 @@ h1 {
 .n-time .details li img {
   opacity: 0.35;
 }
+
+/*# sourceMappingURL=styles.css.map */

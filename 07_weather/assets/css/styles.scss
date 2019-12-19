@@ -45,6 +45,22 @@ body {
   @media (min-width: 800px) {
     margin: 0 auto;
   }
+
+  &.d-time {
+    background: #f3fbff;
+
+    h1 {
+      color: #98c0d6;
+    }
+  }
+
+  &.n-time {
+    background: $lgr;
+
+    h1 {
+      color: darken($mgr, 10%);
+    }
+  }
 }
 
 h1 {
