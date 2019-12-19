@@ -37,8 +37,14 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 19. Weather App Plugin  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/07_weather/19-weather-app-plugin.html)
 
 ### 08. Dom Library
-18. Helper Library  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/08_helper-library/20-helper-library.html)
-19. Dom Manipulation Library  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/08_helper-library/21-dom-manipulation-library.html)
+20. Helper Library  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/08_helper-library/20-helper-library.html)
+21. Dom Manipulation Library  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/08_helper-library/21-dom-manipulation-library.html)
+22. Dom Manipulation Library Chaining  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/08_helper-library/22-dom-manipulation-library-chaining.html)
 
 ### 09. Debugging
-18. Debugging broken code  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/09_debugging/23-debugging-broken-code.html)
+23. Debugging broken code  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/09_debugging/23-debugging-broken-code.html)
+
+### 10. Form Saver
+24. Form Autosave [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/10_form-saver/24-form-autosave.html)
+25. Form Autosave Single Entry  [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/10_form-saver/25-form-autosave-single-entry.html)
+26. Form Autosave Other Fields[Demo](https://letioneill.github.io/VJSAcademy-Fall2019/10_form-saver/26-form-autosave-other-fields.html)
