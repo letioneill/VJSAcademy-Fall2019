@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css?family=Inria+Serif:400,700|Muli:300&display=swap");
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50vh 1fr;
+  overflow: hidden;
+}
+@media (min-width: 1000px) {
+  main {
+    grid-template-columns: 1fr 1.25fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+  }
+}
+
+.left {
+  background: royalblue;
+}
+@media (min-width: 1000px) {
+  .left {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.right {
+  background: orangered;
+  overflow-y: scroll;
+  padding: 1em 4em;
+  border-left: 15px solid royalblue;
+  color: #fff;
+  line-height: 2;
+}
+.right::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 1000px) {
+  .right {
+    border-left: none;
+    padding: 3.5em 5em 5em;
+  }
+}
+
+h1 {
+  font-size: 5em;
+  font-family: "Inria Serif", serif;
+  color: #fff;
+  line-height: 0.9;
+  padding: 1em 0.25em;
+  position: absolute;
+  bottom: 5px;
+}
+h1 em {
+  display: block;
+  font-family: "Muli", sans-serif;
+  font-size: 0.25em;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.25;
+  margin-top: 0.5em;
+}
+@media (min-width: 1000px) {
+  h1 em {
+    font-size: 0.3em;
+  }
+}
+h1:after {
+  display: block;
+  content: "";
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  background: url(../img/wave-wt.svg);
+  background-position-x: 0;
+  background-position-y: 0;
+  background-size: 55px 22px;
+}
+@media (max-width: 999px) {
+  h1:after {
+    width: 175%;
+    background-size: 55px 25px;
+    animation: move 15s linear infinite;
+    -webkit-animation: move 15s linear infinite;
+    animation-play-state: running;
+  }
+}
+@media (min-width: 1000px) {
+  h1:after {
+    width: 120%;
+  }
+}
+
+h2 {
+  font-family: "Inria Serif", serif;
+  font-size: 2em;
+  line-height: 1.1;
+  margin: 1em 0 0;
+}
+@media (min-width: 1000px) {
+  h2 {
+    font-size: 3em;
+  }
+}
+
+p {
+  font-family: "Muli", sans-serif;
+  margin: 1em 0 0.5em;
+}
+p:before {
+  display: block;
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: 15px;
+  left: -90px;
+  width: 70px;
+  background: url("../img/wave.svg");
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-size: auto auto;
+  background-size: 19px 11px;
+}
+@media (min-width: 1000px) {
+  p:before {
+    animation: move 15s linear infinite;
+    -webkit-animation: move 15s linear infinite;
+    animation-play-state: running;
+  }
+}
+
+article {
+  font-family: "Inria Serif", serif;
+  margin-bottom: 2em;
+}
+article:first-child h2 {
+  margin-top: 1em;
+}
+@media (min-width: 1000px) {
+  article:first-child h2 {
+    margin-top: 0;
+  }
+}
+
+#app > p::before {
+  display: none;
+}
+
+@-webkit-keyframes move {
+  from {
+    background-position: 2px 19px;
+  }
+  to {
+    background-position: 500px 19px;
+  }
+}
+@keyframe move {
+  from {
+    background-position: 2px 19px;
+  }
+
+  to {
+    background-position: 500px 19px;
+  }
+}
+#island {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 15%;
+  background: url("../img/island-2.svg");
+}
+@media (min-width: 725px) {
+  #island {
+    display: block;
+    width: 150px;
+    height: 150px;
+    top: 115px;
+    left: 83%;
+  }
+}
+@media (min-width: 1000px) {
+  #island {
+    width: 110px;
+    height: 110px;
+    top: 250px;
+    left: 30px;
+  }
+}
+
+#location {
+  display: none;
+  width: 350px;
+  top: 90px;
+  left: 25%;
+}
+@media (min-width: 1000px) {
+  #location {
+    display: block;
+    left: 20%;
+  }
+}
+
+.direction {
+  stroke-dashoffset: 389.444;
+  animation: dash 20s linear forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+#route {
+  opacity: 0.15;
+}
+
+#sun {
+  display: block;
+  content: "";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 30px;
+  left: 80%;
+  background: url("../img/sun.svg");
+}
+@media (min-width: 550px) {
+  #sun {
+    display: block;
+  }
+}
+@media (min-width: 1000px) {
+  #sun {
+    left: 20%;
+  }
+}
+
+.dashed-line__path {
+  animation: dashed-line-path 5s ease-in-out forwards;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 389.444;
+  /* this is the entire length of the line */
+  stroke-dashoffset: 389.444;
+  /* this is the entire length of the line */
+  stroke-width: 2;
+}
+
+.dashed-line__dash {
+  fill: none;
+  stroke: royalblue;
+  /* this must match the background color */
+  stroke-dasharray: 3 4.5;
+  /* draws a 10px dash line with a 16px gap between */
+  stroke-width: 2.5;
+  /* make the dashed line slightly bigger than the one it's covering */
+}
+
+@-webkit-keyframes dashed-line-path {
+  0% {
+    stroke-dashoffset: 389.444;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dashed-line-path {
+  0% {
+    stroke-dashoffset: 389.444;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

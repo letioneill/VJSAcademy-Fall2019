@@ -1,0 +1,14 @@
+<svg id="sunshine" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
+  <title>sun</title>
+  <g fill="none" stroke-width="2" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="22.5" y1="6.26" x2="22.5" y2="2.66"/>
+    <line x1="11.12" y1="11.03" x2="8.57" y2="8.48"/>
+    <line x1="6.26" y1="22.5" x2="2.66" y2="22.5"/>
+    <line x1="11.12" y1="33.99" x2="8.57" y2="36.54"/>
+    <line x1="22.5" y1="38.74" x2="22.5" y2="42.34"/>
+    <line x1="34.08" y1="33.99" x2="36.63" y2="36.54"/>
+    <line x1="38.74" y1="22.5" x2="42.34" y2="22.5"/>
+    <line x1="34.08" y1="11.03" x2="36.63" y2="8.48"/>
+    <circle cx="22.5" cy="22.56" r="9.02"/>
+  </g>
+</svg>

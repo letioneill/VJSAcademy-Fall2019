@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API Cache - Fallback</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+	<main>
+		<section class="left">
+			<div id="sun"></div>
+			<div id="island"></div>
+			<div id="compass"></div>
+			<div class="route">
+				<svg id="location" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 215">
+				  <defs>
+				  	<path id="dashed-line" d="M2.67,205.68c.84-11.22,8.47-32.6,55.52-27.06,67.83,8,66.75-67.12,23-90.73-63.07-34,21.12-136,74.29-56.56"/>
+				  </defs>
+				  <g id="skull" fill="none" stroke="#ffffff" stroke-miterlimit="10">
+				    <path d="M168.83,48.18a9.67,9.67,0,1,0-16.36,7v3.43a2.23,2.23,0,1,0,4.46,0,2.23,2.23,0,1,0,4.46,0,2.23,2.23,0,1,0,4.46,0V55.16A9.67,9.67,0,0,0,168.83,48.18Z"/>
+				    <circle cx="154.7" cy="48.18" r="2.23"/>
+				    <circle cx="163.62" cy="48.18" r="2.23"/>
+				    <path d="M160.65,54.87c-.39-.58-.69-1-1.49-1s-1.09.45-1.49,1"/>
+				    <path d="M151.55,54.13l-5.32,5.32a2.6,2.6,0,0,0-3.4,3.93L145.45,66a2.6,2.6,0,0,0,3.93-3.4l3.24-3.23"/>
+				    <path d="M153.21,40.57l-3.83-3.83a2.6,2.6,0,0,0-3.93-3.4L142.83,36a2.6,2.6,0,0,0,3.4,3.93l4.18,4.18"/>
+				    <path d="M166.78,54.13l5.32,5.32a2.6,2.6,0,0,1,3.39,3.93L172.87,66a2.6,2.6,0,0,1-3.93-3.4l-3.23-3.23" />
+				    <path d="M165.11,40.57l3.83-3.83a2.6,2.6,0,0,1,3.93-3.4L175.5,36a2.6,2.6,0,0,1-3.4,3.93l-4.19,4.18"/>
+				  </g>
+				  <g id="route" fill="none">
+				  	<!-- A solid white line that we'll animate -->
+						<use class="dashed-line__path" xlink:href="#dashed-line"/>
+						<!-- A dashed blue line that sits on top of the solid line -->
+						<use class="dashed-line__dash" xlink:href="#dashed-line"/>
+				  </g>
+				</svg>
+			</div>
+			<h1>The Scuttlebutt <em>the number one source for pirate news!</em></h1>
+		</section>
+		<section class="right">
+			<div id="app">
+				Loading...
+			</div>
+		</section>
+	</main>
+
+	<script>
+		//
+		// Variables
+		//
+
+		// Get the #app element
+		var app = document.querySelector('#app');
+
+		// Define a localStorage ID
+		var storageID = 'pirateCache';
+
+		//
+		// Methods
+		//
+
+		/**
+		 * Dynamically vary the API endpoint
+		 * @return {String} The API endpoint
+		 */
+		var getEndpoint = function () {
+			var endpoint = 'https://vanillajsacademy.com/api/';
+			var random = Math.random();
+			if (random < 0.5) return endpoint + 'pirates.json';
+			return endpoint + 'fail.json';
+		};
+
+		/**
+		 * Sanitize and encode all HTML in a user-submitted string
+		 * @param  {String} str  The user-submitted string
+		 * @return {String} str  The sanitized string
+		 */
+		var sanitizeHTML = function (str) {
+			var temp = document.createElement('div');
+			temp.textContent = str;
+			return temp.innerHTML;
+		};
+		/**
+		 * Render a message into the UI when there are no articles to share
+		 */
+		var renderNoArticles = function () {
+			app.innerHTML = '<p>There be no pirate news afoot, matey. Check back later.</p>';
+		};
+		/**
+		 * Render articles into the UI
+		 * @param  {Object} data The API response object
+		 */
+		var renderNews = function (data) {
+			// If there are no articles, render a message into the UI
+			if (data.articles.length < 1) {
+				renderNoArticles();
+				return;
+			}
+			// Otherwise, render the UI
+			app.innerHTML = data.articles.map(function (article) {
+				var html =
+					'<article>' +
+						'<h2>' + sanitizeHTML(article.title) + '</h2>' +
+						'<p><em>By ' + sanitizeHTML(article.author) + ' on ' + sanitizeHTML(article.pubdate) + '</em></p>' +
+						sanitizeHTML(article.article) +
+					'</article>';
+				return html;
+			}).join('') + '<p><em>Articles from <a href="' + sanitizeHTML(data.attribution.url) + '">' + sanitizeHTML(data.attribution.name) + '</a></em></p>';
+		};
+		/**
+		 * Check if the data is valid
+		 * @param  {Object}  saved   The data to validate
+		 * @param  {Number}  goodFor How long the data is good for
+		 * @return {Boolean}         If true, data has not yet expired
+		 */
+		var isDataValid = function (saved, goodFor) {
+			// Check that there's data, and a timestamp key
+			if (!saved || !saved.data || !saved.timestamp) return false;
+			// Get the difference between the timestamp and current time
+			var difference = new Date().getTime() - saved.timestamp;
+			return difference < goodFor;
+		};
+		/**
+		 * Save article data to localStorage
+		 * @param  {Object} data The article data
+		 */
+		var saveData = function (data) {
+			// Create a cache object with a timestamp
+			var cache = {
+				data: data,
+				timestamp: new Date().getTime()
+			};
+			// Stringify it and save it to localStorage
+			localStorage.setItem(storageID, JSON.stringify(cache));
+		};
+		/**
+		 * Get API data from localStorage
+		 */
+		var getData = function () {
+			// Get saved data from localStorage
+			var saved = localStorage.getItem(storageID);
+			if (!saved) return;
+			saved = JSON.parse(saved);
+			// If data is has not expired, return it
+			// Use cached data from 30 seconds
+			if (isDataValid(saved, 1000 * 5)) {
+				return saved.data;
+			}
+		};
+
+		/**
+		 * Render content from API cache on failed request
+		 */
+		var renderFallback = function () {
+			// Get data from localStorage
+			var saved = localStorage.getItem(storageID);
+			// If there's no API cache, show message in the UI
+			if (!saved) {
+				renderNoArticles();
+				return;
+			}
+			// Parse saved data
+			saved = JSON.parse(saved);
+			// Render articles with cached data
+			renderNews(saved.data);
+			console.log('Fallback from cache after failure');
+		};
+
+
+		/**
+		 * Get articles from the cache if still valid, or from the API if not
+		 */
+		var fetchArticles = function () {
+			// Check for valid cached data
+			// If it exists, use it
+			var saved = getData();
+			if (saved) {
+				renderNews(saved);
+				console.log('Loaded from cache');
+				return;
+			}
+			// Otherwise, fetch articles from the API
+			fetch(getEndpoint()).then(function (response) {
+				if (response.ok) {
+					return response.json();
+				} else {
+					return Promise.reject(response);
+				}
+			}).then(function (data) {
+				renderNews(data);
+				saveData(data);
+				console.log('Fetched from API');
+			}).catch(function () {
+				renderFallback();
+			});
+		};
+		//
+		// Inits
+		//
+		fetchArticles();
+
+	</script>
+</body>
+</html>
