@@ -49,6 +49,6 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 25. Form Autosave Single Entry [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/10_form-saver/25-form-autosave-single-entry.html)
 26. Form Autosave Other Fields [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/10_form-saver/26-form-autosave-other-fields.html)
 
-### 10. API Cache
+### 11. API Cache
 27. API Cache [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/11_api-cache/27-api-cache.html)
 28. API Cache Fallback [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/11_api-cache/28-api-cache-fallback.html)
