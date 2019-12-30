@@ -52,3 +52,9 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 ### 11. API Cache
 27. API Cache [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/11_api-cache/27-api-cache.html)
 28. API Cache Fallback [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/11_api-cache/28-api-cache-fallback.html)
+
+### 12. Countdown Timer
+29. Timer [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/12_countdown-timer/29-timer.html)
+30. Timer Formatted [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/12_countdown-timer/30-timer-formatted.html)
+31. Timer Start / Pause [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/12_countdown-timer/31-timer-start-pause.html)
+32. Timer Reactive Data [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/12_countdown-timer/32-timer-reactive-data.html)

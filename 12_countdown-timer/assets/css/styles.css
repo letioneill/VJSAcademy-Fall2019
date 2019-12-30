@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,700&display=swap");
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1em auto;
+  max-width: 40em;
+  background: midnightblue;
+  font-family: "Work Sans", sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.65em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  margin: 2.5em auto 2em;
+}
+
+.timer {
+  max-width: 70vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.25fr 1fr 1fr 1fr;
+}
+
+#total {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+#total p {
+  font-size: 1.5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  margin-bottom: 1.5em;
+}
+
+.circle {
+  grid-column: 1/-1;
+  grid-row: 2/5;
+}
+.circle svg {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.circle circle {
+  fill: none;
+}
+.circle .dash-bk {
+  stroke: rgba(255, 255, 255, 0.15);
+}
+.circle .circle_animation {
+  stroke: lightpink;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+}
+.circle .dash {
+  stroke: midnightblue;
+}
+
+#app {
+  grid-column: 1/-1;
+  grid-row: 3/-1;
+}
+
+#time-count {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 2.25;
+  letter-spacing: 4px;
+}
+@media (min-width: 650px) {
+  #time-count {
+    font-size: 3.75em;
+  }
+}
+@media (min-width: 800px) {
+  #time-count {
+    font-size: 4.75em;
+  }
+}
+
+button {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  outline: inherit;
+  cursor: pointer;
+}
+button:focus {
+  border: 4px solid lightpink;
+}
+button:hover {
+  box-shadow: 0 0 9px 9px rgba(15, 15, 66, 0.2);
+  transform: scale(1.05);
+}
+@media (min-width: 650px) {
+  button {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 800px) {
+  button {
+    width: 125px;
+    height: 125px;
+  }
+}
+button[data-restart-timer] {
+  background-color: salmon;
+  background-image: url("../img/refresh.svg");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 20px;
+  transition: transform 0.15s ease-in-out;
+}
+@media (min-width: 650px) {
+  button[data-restart-timer] {
+    background-size: 50px;
+  }
+}
+@media (min-width: 800px) {
+  button[data-restart-timer] {
+    background-size: 60px;
+  }
+}
+
+@media (min-width: 800px) {
+  #actions {
+    margin-top: 30px;
+  }
+}
+#actions button[data-start-timer], #actions button[data-pause-timer], #actions button[data-restart-timer] {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+}
+@media (min-width: 650px) {
+  #actions button[data-start-timer], #actions button[data-pause-timer], #actions button[data-restart-timer] {
+    background-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (min-width: 800px) {
+  #actions button[data-start-timer], #actions button[data-pause-timer], #actions button[data-restart-timer] {
+    background-size: 50px;
+    width: 70px;
+    height: 70px;
+  }
+}
+#actions button[data-start-timer], #actions button[data-pause-timer] {
+  background-color: salmon;
+  background-size: 30px;
+  margin-right: 2em;
+}
+@media (min-width: 650px) {
+  #actions button[data-start-timer], #actions button[data-pause-timer] {
+    background-size: 35px;
+  }
+}
+@media (min-width: 800px) {
+  #actions button[data-start-timer], #actions button[data-pause-timer] {
+    background-size: 40px;
+  }
+}
+#actions button[data-start-timer] {
+  background-image: url("../img/play.svg");
+}
+#actions button[data-pause-timer] {
+  background-image: url("../img/pause.svg");
+}
+#actions button[data-restart-timer] {
+  background-color: rgba(255, 255, 255, 0.25);
+  background-size: 25px;
+  margin-top: 0;
+}
+#actions button[data-restart-timer]:focus {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+@media (min-width: 650px) {
+  #actions button[data-restart-timer] {
+    background-size: 30px;
+  }
+}
+@media (min-width: 800px) {
+  #actions button[data-restart-timer] {
+    background-size: 35px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

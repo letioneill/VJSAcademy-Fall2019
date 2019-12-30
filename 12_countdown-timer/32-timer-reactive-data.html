@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timer</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+	<h1>Timer</h1>
+
+	<div class="timer">
+		<div id="total">
+			<p>2:00</p>
+		</div>
+		<div class="circle">
+		  <svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 74 74">
+		  	<circle class="dash-bk" r="34.44" cy="41" cx="41" stroke-width="5" />
+		    <circle id="circle" class="circle_animation" r="34.44" cy="41" cx="41" stroke-width="5" />
+		    <circle class="dash" r="34.44" cy="41" cx="41" stroke-width="6" stroke-dasharray="1 .833333333333333" stroke="midnightblue" />
+			</svg>
+		</div>
+		<div id="app"></div>
+	</div>
+
+	<script>
+		//
+		// Variables
+		//
+		
+		// Get the #app element from the DOM
+		var app = document.querySelector('#app');
+
+		// Get the #circle svg element from the DOM
+		var circle = document.querySelector('#circle');
+		
+		// Store duration to a variable
+		var duration = 120;
+
+		// Store circle offset value
+		var dOff = '220';
+
+		// Hide progress ring by setting to full offset value
+		circle.style.strokeDashoffset = dOff;
+		
+		// The state/data object
+		var data = {
+			timer: duration,
+			done: false,
+			paused: true,
+			offset: dOff,
+			incr: dOff / duration
+		};
+		
+		// A placeholder for the countdown interval
+		var countdown;
+
+		//
+		// Methods
+		//
+		/**
+		 * Get the template markup
+		 * @return {String} The HTML string
+		 */
+		var template = function () {
+			// If the timer is done, show a different UI
+			if (data.done) {
+				return '<button data-restart-timer aria-label="Restart Timer"></button>';
+			}
+			
+			// Get the minutes and seconds
+			var minutes = parseInt(data.timer / 60, 10);
+			var seconds = data.timer % 60;
+			
+			// Create the markup string
+			var html =
+				'<p id="time-count">' + minutes.toString() + ':' + seconds.toString().padStart(2, '0') + '</p>' +
+				'<div id="actions">' + (data.paused ? '<button data-start-timer aria-label="Start Timer"></button>' : '<button data-pause-timer aria-label="Pause Timer"></button>') + ' <button data-restart-timer aria-label="Restart Timer"></button></div>';
+			
+			return html;
+		};
+		
+		/**
+		 * Render the template into the DOM
+		 */
+		var render = function () {
+			// If there are no updates to the UI, do nothing
+			if (app.innerHTML === template()) return;
+			// Update the UI
+			app.innerHTML = template();
+		};
+
+		/**
+		 * Reactively update the data object
+		 * @param {Object} obj The updated data
+		 */
+		var setData = function (obj) {
+			// Update the data object
+			for (var key in obj) {
+				if (obj.hasOwnProperty(key)) {
+					data[key] = obj[key];
+				}
+			}
+			// Render a new UI
+			render();
+		};
+
+		/**
+		 * Stop the countdown
+		 */
+		var stopCountdown = function () {
+			setData({paused: true});
+			window.clearInterval(countdown);
+		};
+
+		/**
+		 * Update the timer every second
+		 */
+		var startCountdown = function () {
+			setData({paused: false});
+			countdown = window.setInterval(function () {
+				// Get the new timer value
+				var time = data.timer - 1;
+
+				// Get the new offset value
+				var prog = data.offset - data.incr;
+				
+				// If the timer hits 0, set as done
+				var done = time === 0 ? true : false;
+
+				// Update data
+				data.timer = time;
+				data.done = done;
+				data.offset = prog;
+
+				circle.style.strokeDashoffset = data.offset;
+
+				// Render new UI
+				render();
+
+				// If the timer is done, stop it from running
+				if (done) {
+					stopCountdown();
+					circle.style.strokeDashoffset = dOff;
+				}
+			}, 1000);
+		};
+
+		/**
+		 * Start the timer
+		 */
+		var startTimer = function () {
+
+			// Clear any existing timers
+			stopCountdown();
+
+			// Update the timer every second
+			startCountdown();
+
+			// Reset the data and render an initial UI
+			setData({
+				timer: duration,
+				done: false,
+				offset: dOff
+			});
+		};
+
+
+		/**
+		 * Handle click events
+		 * @return {Event} The event object
+		 */
+		var clickHandler = function (event) {
+			// If a restart button was clicked, start the timer
+			if (event.target.hasAttribute('data-restart-timer')) {
+				startTimer();
+			}
+			// If the start button was clicked, start the timer
+			// Restart the countdown
+			if (event.target.hasAttribute('data-start-timer')) {
+				startCountdown();
+			}
+			// If the pause button was clicked, pause the timer
+			// Stop the countdown
+			if (event.target.hasAttribute('data-pause-timer')) {
+				stopCountdown();
+			}
+		};
+
+		//
+		// Inits & Event Listeners
+		//
+		// Render the timer on page load
+		render();
+
+		// Listen for clicks on the timer buttons
+		document.addEventListener('click', clickHandler, false);
+
+	</script>
+</body>
+</html>
