@@ -60,18 +60,14 @@
 
     // Add articles into the app element
     var render = function (articles) {
-
       // Create array and combine with join + add to #app with innerHTML
       app.innerHTML = articles.map(function (article) {
         if(article.multimedia.length > 0){
-          var imgURL = article.multimedia[4].url;
-          var imgCaption = article.multimedia[4].caption;
-          var imgCopy = article.multimedia[4].copyright;
+          var imgURL = article.multimedia[4] ? '<figure><img src="' + article.multimedia[4].url + '" alt="' + article.multimedia[4].caption + '"><figcaption><section aria-hidden="true"><span class="caption">' + article.multimedia[4].caption + '</span> <span class="credit">' + article.multimedia[4].copyright + '</span></section></figcaption></figure>' : '';
         }
         var html =
           '<article>' +
-          '<figure><img src="' + imgURL + '" alt="' + imgCaption + '"><figcaption><section aria-hidden="true"><span class="caption">' + imgCaption + '</span> <span class="credit">' + imgCopy + '</span></section></figcaption></figure>' +
-
+            imgURL +
             '<div class="content">' +
             '<p class="section">' + article.subsection + '</p>' +
             '<h2><a href="' + article.url + '">' + article.title + '</a></h2>' +

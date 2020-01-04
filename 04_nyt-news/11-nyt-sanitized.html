@@ -51,17 +51,19 @@
 
     // Add articles into the app element
     function renderArticles (article) {
-        return (
-          '<article>' +
-          '<figure><img src="' + sanitizeHTML(article.multimedia[4].url) + '" alt="' + sanitizeHTML(article.multimedia[4].caption) + '"><figcaption><section aria-hidden="true"><span class="caption">' + sanitizeHTML(article.multimedia[4].caption) + '</span> <span class="credit">' + sanitizeHTML(article.multimedia[4].copyright) + '</span></section></figcaption></figure>' +
-
-            '<div class="content">' +
-            '<p class="section">' + sanitizeHTML(article.subsection) + '</p>' +
-            '<h2><a href="' + sanitizeHTML(article.url) + '">' + sanitizeHTML(article.title) + '</a></h2>' +
-            '<p class="abstract">' + sanitizeHTML(article.abstract) + '</p>' +
-            '<p class="info"><span class="date">' + formatDate(article.created_date) + '</span><span class="byline">' + sanitizeHTML(article.byline) + '</span></p></div>' +
-          '</article>'
-        );
+      if(article.multimedia.length > 0){
+        var imgURL = article.multimedia[4] ? '<figure><img src="' + article.multimedia[4].url + '" alt="' + article.multimedia[4].caption + '"><figcaption><section aria-hidden="true"><span class="caption">' + article.multimedia[4].caption + '</span> <span class="credit">' + article.multimedia[4].copyright + '</span></section></figcaption></figure>' : '';
+      }
+      return (
+        '<article>' +
+          imgURL +
+          '<div class="content">' +
+          '<p class="section">' + sanitizeHTML(article.subsection) + '</p>' +
+          '<h2><a href="' + sanitizeHTML(article.url) + '">' + sanitizeHTML(article.title) + '</a></h2>' +
+          '<p class="abstract">' + sanitizeHTML(article.abstract) + '</p>' +
+          '<p class="info"><span class="date">' + formatDate(article.created_date) + '</span><span class="byline">' + sanitizeHTML(article.byline) + '</span></p></div>' +
+        '</article>'
+      );
     }
 
     // Add articles into the app element
