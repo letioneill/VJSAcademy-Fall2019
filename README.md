@@ -58,3 +58,8 @@ Projects for Fall 2019 [Vanilla JS Academy](https://vanillajsacademy.com/)
 30. Timer Formatted [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/12_countdown-timer/30-timer-formatted.html)
 31. Timer Start / Pause [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/12_countdown-timer/31-timer-start-pause.html)
 32. Timer Reactive Data [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/12_countdown-timer/32-timer-reactive-data.html)
+
+### 13. Todo List
+33. Todos [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/13_todo-list/33-todos.html)
+34. Todos Save and Delete [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/13_todo-list/34-todos-save-and-delete.html)
+35. Todos Routing [Demo](https://letioneill.github.io/VJSAcademy-Fall2019/13_todo-list/35-todos-routing.html)

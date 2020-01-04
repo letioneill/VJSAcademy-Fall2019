@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+// ------- Variables
+
+// -- Colors
+$bl: #000;
+$wt:#fff;
+$dgr: #b9b9b5;
+$lgr: gainsboro;
+$bg: #F0EFE9;
+$gre: #50e2a4;
+$dpur: #661ea7;
+$trn: transparent;
+
+// -- Ease
+$curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
+
+// -- Fonts
+$quick: 'Quicksand', sans-serif;
+
+// -- Styles
+*, *:before, *:after {
+  margin:0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 50em;
+  width: 88%;
+  font-family: $quick;
+  background: $bg;
+  margin: 1em auto;
+}
+
+main {
+  padding: 3em 4em;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba($dgr, .25);
+  background: $wt;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 2.5rem;
+}
+
+form {
+  margin-bottom: 2em;
+
+  button {
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    background: rgba($dpur,0.5);
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: width .25s;
+
+    .btn-txt {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      width: 100px !important;
+
+      @media (min-width: 700px) {
+        width: 110px !important;
+      }
+
+      .icon-plus {
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+
+      .btn-txt {
+        display: inline;
+        position: absolute;
+        top: 9px;
+        left: 23px;
+        width: 80%;
+        font-family: $quick;
+        font-size: .9em;
+        font-weight: 700;
+        color: $wt;
+        text-transform: uppercase;
+        letter-spacing: .25px;
+
+        @media (min-width: 700px) {
+          left: 18px;
+          width: 88%;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  .icon-plus {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background: $dpur;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform .15s ease-in-out;
+
+    @media (min-width: 700px) {
+      left: 0;
+      width: 60px;
+      height: 60px;
+    }
+    
+    // vertical and horizontal lines
+    &:before,
+    &:after {
+      content:"";
+      position: absolute;
+      background: $wt;
+    }
+
+    // vertical line
+    &:before {
+      top: 15px;
+      left: 23.5px;
+      width: 3px;
+      height: 20px;
+
+      @media (min-width: 700px) {
+        top: 20px;
+        left: 28.5px;
+      }
+    }
+    
+    // horizontal line
+    &:after {
+      top: 23.5px;
+      left: 15px;
+      width: 20px;
+      height: 3px;
+
+      @media (min-width: 700px) {
+        top: 28.5px;
+        left: 20px;
+      }
+    }
+  }
+
+  .label {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    font-size: 1rem;
+    color: $dgr;
+    pointer-events: none;
+    transform: translateY(-50%) scale(1);
+    transition: transform 0.25s, background-color 0.25s ease-in-out;
+  }
+
+  input[type="text"]:focus + .label,
+  input[type="text"]:not(:placeholder-shown) + .label {
+    top: 55%;
+    left: -1.75rem;
+    width: auto;
+    color: $dgr;
+    padding: .5rem .75rem;
+    border-radius: 30px;
+    background-color: $wt;
+    box-shadow: 0 0 5px rgba($dgr, 0.65);
+    transform: translateY(-140%) scale(0.8);
+  }
+}
+
+.no-todos,
+.no-lists {
+  color: $dgr;
+}
+
+// UL: todos
+.todos {
+  list-style: none;
+  margin: 3em 0 1em;
+  padding: 0;
+
+  // Each todo item
+  li {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    display: flex;
+
+    @media (min-width: 700px) {
+      margin-bottom: 1.75em;
+    }
+
+    // Completed todos
+    &.todo-completed {
+      text-decoration: line-through;
+      color: $lgr;
+
+      label {
+        color: $lgr;
+      }
+    }
+  }
+
+  label{
+    display:flex;
+    width:100%;
+    color:$bl;
+    margin:0 135px 0 0; 
+    cursor:pointer;
+  }
+}
+
+// OL: lists
+.lists {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  li {
+    width: 100%;
+    padding: 0.5em 3em 0.5em 1em;
+    margin: 1em 0;
+    border-left: 8px solid $dpur;
+    box-shadow: 0 0 5px 2px rgba($dgr,0.15);
+
+    @media (min-width: 700px) {
+      width: 45%;
+    }
+
+    &:hover {
+      button[data-delete-list] {
+        display: inline-block;
+        opacity: 1;
+      }
+    }
+
+    a {
+      display: inline-block;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: $bl;
+      text-decoration: none;
+      padding-bottom: .1em;
+      border-bottom: 2px solid $trn;
+
+      &:hover,
+      &:focus {
+        border-bottom-color: $gre;
+      }
+    }
+  }
+
+  .todos-amt {
+    font-size: .9em;
+    color: $lgr;
+    margin: .5em 0;
+  }
+}
+
+// Back to Lists Link
+.back {
+  position: absolute;
+  top: -3em;
+  right: -4em;
+  color: $wt;
+  text-decoration: none;
+  padding: .5em 1em;
+  border-top-right-radius: 4px;
+  background: $gre;
+}
+
+input {
+  
+  // Create lists and todo fields
+  &[type="text"] {
+    width: 66%;
+    font-family: $quick;
+    font-size: 1.1em;
+    color: $bl;
+    padding: .5em;
+    background: rgba($dgr, 0.1);
+    border: none;
+    border-bottom: .5px solid $lgr;
+
+    @media (min-width: 700px) {
+      width: 78%;
+    }
+
+    &::placeholder {
+      color: $trn;
+    }
+  }
+
+  // Todo checkmark
+  &[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    border:2px solid $dpur;
+    border-radius: 50%;
+    background: $wt;
+    margin-right: 1em;
+    outline: none;
+    -webkit-appearance: none;
+    flex: 0 0 25px;
+
+    &:checked {
+      background: $dpur;
+      border: none;
+      animation: scale .15s $curve;
+    }
+    
+    // Checkmark symbol
+    &:before {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 9px;
+      top: 7px;
+      left: 9px;
+      border: solid $wt;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+button {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  border-radius: 30px;
+  font-family: $quick;
+  font-weight: 700;
+  color: $bl;
+  cursor: pointer;
+  
+  // Delete list: circle only
+  &[data-delete-list] {
+    display: inline-block;
+    top: 10px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    background: $gre;
+    opacity: 1;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 7px;
+      left: 12px;
+      content: ' ';
+      width: 2px;
+      height: 12.5px;
+      background-color: $wt;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+  
+  // Delete todo items: helper text;
+  &[data-delete-todo] {
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    padding: 1em;
+    background: rgba(80, 226, 168, .5);
+    transition: width .25s;
+
+    .btn-txt-close {
+      left: 8px;
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+      width: 110px;
+
+      .btn-txt-close {
+        display: inline-block;
+        left: 14px;
+        pointer-events: none;
+        animation: show .5s ease-in-out forwards;
+      }
+    }
+
+    .icon-close {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 25px;
+      height: 25px;
+      background: $gre;
+      border-radius: 30px;
+      pointer-events: none;
+      opacity: 1;
+
+      &:before,
+      &:after {
+        position: absolute;
+        top: 7px;
+        left: 12px;
+        width: 2px;
+        height: 12.5px;
+        content: ' ';
+        background-color: $wt;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+// Grow check on hover
+@-webkit-keyframes scale {
+  0% {transform: scale(.8);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+@keyframes scale {
+  0% {transform: scale(.8);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+// Fade-in
+@-webkit-keyframes show {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes show {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

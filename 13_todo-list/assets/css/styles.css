@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 50em;
+  width: 88%;
+  font-family: "Quicksand", sans-serif;
+  background: #F0EFE9;
+  margin: 1em auto;
+}
+
+main {
+  padding: 3em 4em;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(185, 185, 181, 0.25);
+  background: #fff;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 2.5rem;
+}
+
+form {
+  margin-bottom: 2em;
+}
+form button {
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(102, 30, 167, 0.5);
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: width 0.25s;
+}
+form button .btn-txt {
+  display: none;
+}
+form button:hover, form button:focus {
+  width: 100px !important;
+}
+@media (min-width: 700px) {
+  form button:hover, form button:focus {
+    width: 110px !important;
+  }
+}
+form button:hover .icon-plus, form button:focus .icon-plus {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+form button:hover .btn-txt, form button:focus .btn-txt {
+  display: inline;
+  position: absolute;
+  top: 9px;
+  left: 23px;
+  width: 80%;
+  font-family: "Quicksand", sans-serif;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+}
+@media (min-width: 700px) {
+  form button:hover .btn-txt, form button:focus .btn-txt {
+    left: 18px;
+    width: 88%;
+    font-size: 1em;
+  }
+}
+form .icon-plus {
+  position: absolute;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background: #661ea7;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-in-out;
+}
+@media (min-width: 700px) {
+  form .icon-plus {
+    left: 0;
+    width: 60px;
+    height: 60px;
+  }
+}
+form .icon-plus:before, form .icon-plus:after {
+  content: "";
+  position: absolute;
+  background: #fff;
+}
+form .icon-plus:before {
+  top: 15px;
+  left: 23.5px;
+  width: 3px;
+  height: 20px;
+}
+@media (min-width: 700px) {
+  form .icon-plus:before {
+    top: 20px;
+    left: 28.5px;
+  }
+}
+form .icon-plus:after {
+  top: 23.5px;
+  left: 15px;
+  width: 20px;
+  height: 3px;
+}
+@media (min-width: 700px) {
+  form .icon-plus:after {
+    top: 28.5px;
+    left: 20px;
+  }
+}
+form .label {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  font-size: 1rem;
+  color: #b9b9b5;
+  pointer-events: none;
+  transform: translateY(-50%) scale(1);
+  transition: transform 0.25s, background-color 0.25s ease-in-out;
+}
+form input[type=text]:focus + .label,
+form input[type=text]:not(:placeholder-shown) + .label {
+  top: 55%;
+  left: -1.75rem;
+  width: auto;
+  color: #b9b9b5;
+  padding: 0.5rem 0.75rem;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(185, 185, 181, 0.65);
+  transform: translateY(-140%) scale(0.8);
+}
+
+.no-todos,
+.no-lists {
+  color: #b9b9b5;
+}
+
+.todos {
+  list-style: none;
+  margin: 3em 0 1em;
+  padding: 0;
+}
+.todos li {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  display: flex;
+}
+@media (min-width: 700px) {
+  .todos li {
+    margin-bottom: 1.75em;
+  }
+}
+.todos li.todo-completed {
+  text-decoration: line-through;
+  color: gainsboro;
+}
+.todos li.todo-completed label {
+  color: gainsboro;
+}
+.todos label {
+  display: flex;
+  width: 100%;
+  color: #000;
+  margin: 0 135px 0 0;
+  cursor: pointer;
+}
+
+.lists {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media (min-width: 700px) {
+  .lists {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.lists li {
+  width: 100%;
+  padding: 0.5em 3em 0.5em 1em;
+  margin: 1em 0;
+  border-left: 8px solid #661ea7;
+  box-shadow: 0 0 5px 2px rgba(185, 185, 181, 0.15);
+}
+@media (min-width: 700px) {
+  .lists li {
+    width: 45%;
+  }
+}
+.lists li:hover button[data-delete-list] {
+  display: inline-block;
+  opacity: 1;
+}
+.lists li a {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  padding-bottom: 0.1em;
+  border-bottom: 2px solid transparent;
+}
+.lists li a:hover, .lists li a:focus {
+  border-bottom-color: #50e2a4;
+}
+.lists .todos-amt {
+  font-size: 0.9em;
+  color: gainsboro;
+  margin: 0.5em 0;
+}
+
+.back {
+  position: absolute;
+  top: -3em;
+  right: -4em;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-top-right-radius: 4px;
+  background: #50e2a4;
+}
+
+input[type=text] {
+  width: 66%;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.1em;
+  color: #000;
+  padding: 0.5em;
+  background: rgba(185, 185, 181, 0.1);
+  border: none;
+  border-bottom: 0.5px solid gainsboro;
+}
+@media (min-width: 700px) {
+  input[type=text] {
+    width: 78%;
+  }
+}
+input[type=text]::placeholder {
+  color: transparent;
+}
+input[type=checkbox] {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #661ea7;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 1em;
+  outline: none;
+  -webkit-appearance: none;
+  flex: 0 0 25px;
+}
+input[type=checkbox]:checked {
+  background: #661ea7;
+  border: none;
+  animation: scale 0.15s cubic-bezier(0.65, 0, 0.45, 1);
+}
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 9px;
+  top: 7px;
+  left: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+button {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  position: absolute;
+  border-radius: 30px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+}
+button[data-delete-list] {
+  display: inline-block;
+  top: 10px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
+  background: #50e2a4;
+  opacity: 1;
+}
+button[data-delete-list]:before, button[data-delete-list]:after {
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  content: " ";
+  width: 2px;
+  height: 12.5px;
+  background-color: #fff;
+}
+button[data-delete-list]:before {
+  transform: rotate(45deg);
+}
+button[data-delete-list]:after {
+  transform: rotate(-45deg);
+}
+button[data-delete-todo] {
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  padding: 1em;
+  background: rgba(80, 226, 168, 0.5);
+  transition: width 0.25s;
+}
+button[data-delete-todo] .btn-txt-close {
+  left: 8px;
+  opacity: 0;
+}
+button[data-delete-todo]:hover, button[data-delete-todo]:focus {
+  width: 110px;
+}
+button[data-delete-todo]:hover .btn-txt-close, button[data-delete-todo]:focus .btn-txt-close {
+  display: inline-block;
+  left: 14px;
+  pointer-events: none;
+  animation: show 0.5s ease-in-out forwards;
+}
+button[data-delete-todo] .icon-close {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  background: #50e2a4;
+  border-radius: 30px;
+  pointer-events: none;
+  opacity: 1;
+}
+button[data-delete-todo] .icon-close:before, button[data-delete-todo] .icon-close:after {
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  width: 2px;
+  height: 12.5px;
+  content: " ";
+  background-color: #fff;
+}
+button[data-delete-todo] .icon-close:before {
+  transform: rotate(45deg);
+}
+button[data-delete-todo] .icon-close:after {
+  transform: rotate(-45deg);
+}
+
+@-webkit-keyframes scale {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

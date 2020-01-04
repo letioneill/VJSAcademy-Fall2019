@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todos</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+	<main>
+		<h1>Todos</h1>
+
+		<form id="add-todos">
+			<input type="text" id="new-todo" autofocus placeholder="Add a task">
+			<label for="new-todo" class="label">Add a task</label>
+			<button><span class="icon-plus"></span><span class="btn-txt">Add Task</span></button>
+		</form>
+
+		<div id="app"></div>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/reef@4/dist/reef.min.js"></script>
+	<script>
+		//
+		// Variables
+		//
+
+		// The new todo input field
+		var newTodo = document.querySelector('#new-todo');
+
+		//
+		// Methods
+		//
+
+		/**
+		 * Create a todo component
+		 */
+		var app = new Reef('#app', {
+			data: {
+				todos: []
+			},
+			template: function (props) {
+
+				// If there are no todos, ask the user to add some
+				if (props.todos.length < 1) {
+					return '<p class="no-todos">You don\'t have any tasks yet. Add some using the form above.</p>';
+				}
+
+				// Generate markup for todo items
+				return '<ul class="todos">' + props.todos.map(function (todo, index) {
+					var todoHTML =
+						'<li ' + (todo.completed ? 'class="todo-completed"' : '') + '>' +
+							'<label for="todo-' + index + '">' +
+								'<input type="checkbox" id="todo-' + index + '" data-todo="' + index + '" ' + (todo.completed ? 'checked' : '') + '>' +
+								todo.item +
+							'</label>' +
+						'</li>';
+					return todoHTML;
+				}).join('') + '</ul>';
+			}
+		});
+
+		/**
+		 * Handle form submit events
+		 * @param {Event} event The Event object
+		 */
+		var submitHandler = function (event) {
+
+			// Only run for #add-todos form
+			if (event.target.id !== 'add-todos') return;
+
+			// Stop the form from reloading the page
+			event.preventDefault();
+
+			// If the #new-todo input has no value, do nothing
+			if (newTodo.value.length < 1) return;
+
+			// Get a copy of the todos
+			var todos = app.getData().todos;
+
+			// Update data object
+			todos.push({
+				item: newTodo.value,
+				completed: false
+			});
+
+			// Render fresh UI
+			app.setData({todos: todos});
+
+			// Clear the field and return focus
+			newTodo.value = '';
+			newTodo.focus();
+		};
+
+		/**
+		 * Handle click events
+		 * @param {Event} event The Event object
+		 */
+		var clickHandler = function (event) {
+
+			// Only run on todo items
+			var todo = event.target.getAttribute('data-todo');
+			if (!todo) return;
+
+			// Get a copy of the todos
+			var todos = app.getData().todos;
+			if (!todos[todo]) return;
+
+			// Update the todo state
+			todos[todo].completed = event.target.checked;
+
+			// Render a fresh UI
+			app.setData({todos: todos});
+		};
+
+		//
+		// Inits & Event Listeners
+		//
+
+		// Render the initial UI
+		app.render();
+
+		//Listen for form submit events
+		document.addEventListener('submit', submitHandler, false);
+
+		// Listen for click events
+		document.addEventListener('click', clickHandler, false);
+
+
+	</script>
+</body>
+</html>

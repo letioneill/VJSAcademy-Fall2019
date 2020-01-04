@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todos</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+	<main>
+		<div id="app"></div>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/reef@4/dist/reef.min.js"></script>
+	<script>
+		//
+		// Variables
+		//
+		// Save the localStorage ID to a variable for easier configuration later
+		var storageID = 'todosRouting';
+		// Placeholders
+		var app, field;
+		//
+		// Methods
+		//
+		/**
+		 * Get the URL parameters
+		 * source: https://css-tricks.com/snippets/javascript/get-url-variables/
+		 * @param  {String} url The URL
+		 * @return {Object}     The URL parameters
+		 */
+		var getParams = function (url) {
+			var params = {};
+			var parser = document.createElement('a');
+			parser.href = url ? url : window.location.href;
+			var query = parser.search.substring(1);
+			var vars = query.split('&');
+			if (vars.length < 1 || vars[0].length < 1) return params;
+			for (var i = 0; i < vars.length; i++) {
+				var pair = vars[i].split('=');
+				params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+			}
+			return params;
+		};
+		/**
+		 * Create todo lists view
+		 */
+		var createLists = function () {
+			app = new Reef('#app', {
+				data: {},
+				template: function (props) {
+					// Create the form
+					var form =
+						'<h1>My Lists</h1>' +
+						'<form id="add-lists">' +
+							'<input type="text" id="new-list" autofocus placeholder="Create a list">' +
+							'<label for="new-list" class="label">Create a list</label>' +
+							'<button><span class="icon-plus"></span><span class="btn-txt">Create List</span></button>' +
+						'</form>';
+					// If there are no lists, ask the user to create one
+					if (props.lists.length < 1) {
+						return form + '<p class="no-lists">You don\'t have any lists yet. Create one using the form above.</p>';
+					}
+					// Generate markup for todo items
+					return form + '<ol class="lists">' + props.lists.map(function (list, index) {
+						var todoHTML =
+							'<li>' +
+								'<a href="?list=' + index + '">' + list.name + '</a>' +
+								'<p class="todos-amt">' + list.todos.length + ' tasks</p>' +
+								' <button data-delete-list="' + index + '" aria-label="Delete ' + list.name + '"></button>' +
+							'</li>';
+						return todoHTML;
+					}).join('') + '</ol>';
+				}
+			});
+		};
+		/**
+		 * Create todo items view
+		 */
+		var createTodos = function () {
+			app = new Reef('#app', {
+				data: {},
+				template: function (props) {
+					// Create a link back to the lists view
+					var link = '<a href="' + window.location.href.replace('?list=' + props.current, '') + '" class="back">&larr; Back to Lists</a>';
+					// Get the current list
+					var list = props.lists[props.current];
+					// If the list doesn't exist, show a message and link back to all lists
+					if (!list) {
+						return link + '<h1>This list could not be found, sorry!</h1>';
+					}
+					// Create the form
+					var form =
+						link +
+						'<h1>' + list.name + '</h1>' +
+						'<form id="add-todos">' +
+							'<input type="text" id="new-todo" autofocus placeholder="Add a task">' +
+							'<label for="new-todo"  class="label">Add a task</label>' +
+							'<button><span class="icon-plus"></span><span class="btn-txt">Add Todo</span></button>' +
+						'</form>';
+					// If there are no todos, ask the user to add some
+					if (list.todos.length < 1) {
+						return form + '<p class="no-todos">You don\'t have any todos yet. Add some using the form above.</p>';
+					}
+					// Generate markup for todo items
+					return form + '<ul class="todos">' + list.todos.map(function (todo, index) {
+						var todoHTML =
+							'<li ' + (todo.completed ? 'class="todo-completed"' : '') + '>' +
+								'<label for="todo-' + index + '">' +
+									'<input type="checkbox" id="todo-' + index + '" data-todo="' + index + '" ' + (todo.completed ? 'checked' : '') + '>' +
+									todo.item +
+								'</label>' +
+								'<button data-delete-todo="' + index + '" aria-label="Delete ' + todo.item + '"><span class="icon-close"></span><span class="btn-txt-close">Delete Task</span></button>' +
+							'</li>';
+						return todoHTML;
+					}).join('') + '</ul>';
+				}
+			});
+		};
+		/**
+		 * Clear the field and return focus
+		 */
+		var focusField = function () {
+			field.value = '';
+			field.focus();
+		};
+		/**
+		 * Add a new todo item to the app
+		 * @param  {Event} event The Event object
+		 */
+		var addTodo = function (event) {
+			// Only run for #add-todos form
+			if (event.target.id !== 'add-todos') return;
+			// Stop the form from reloading the page
+			event.preventDefault();
+			// If the #new-todo input has no value, do nothing
+			if (field.value.length < 1) return;
+			// Get a copy of the data
+			var data = app.getData();
+			// Get the current list
+			var list = data.lists[data.current];
+			if (!list) return;
+			// Update data object
+			list.todos.push({
+				item: field.value,
+				completed: false
+			});
+			// Render fresh UI
+			app.setData({lists: data.lists});
+			// Clear the field and return focus
+			focusField();
+		};
+		/**
+		 * Add a new list to the app
+		 * @param  {Event} event The Event object
+		 */
+		var addList = function (event) {
+			// Only run for #add-lists form
+			if (event.target.id !== 'add-lists') return;
+			// Stop the form from reloading the page
+			event.preventDefault();
+			// If the #new-list input has no value, do nothing
+			if (field.value.length < 1) return;
+			// Get a copy of the lists
+			var lists = app.getData().lists;
+			// Add the new list
+			lists.push({
+				name: field.value,
+				todos: []
+			});
+			// Render fresh UI
+			app.setData({lists: lists});
+			// Clear the field and return focus
+			focusField();
+		};
+		/**
+		 * Handle form submit events
+		 * @param  {Event} event The Event object
+		 */
+		var submitHandler = function (event) {
+			addList(event);
+			addTodo(event);
+		};
+		/**
+		 * Mark todo item as complete
+		 * @param  {Event} event The event object
+		 */
+		var completeTodo = function (event) {
+			// Only run on todo items
+			var todo = event.target.getAttribute('data-todo');
+			if (!todo) return;
+			// Get a copy of the data
+			var data = app.getData();
+			// Get the current list
+			var list = data.lists[data.current];
+			if (!list || !list.todos[todo]) return;
+			// Update the todo state
+			list.todos[todo].completed = event.target.checked;
+			// Render a fresh UI
+			app.setData({lists: data.lists});
+		};
+		/**
+		 * Delete a todo item from the list
+		 * @param  {Event} event The event object
+		 */
+		var deleteTodo = function (event) {
+			// Only run on delete button clicks
+			var todo = event.target.getAttribute('data-delete-todo');
+			if (!todo) return;
+			// Get a copy of the data
+			var data = app.getData();
+			// Get the current list
+			var list = data.lists[data.current];
+			if (!list || !list.todos[todo]) return;
+			// Confirm with the user before deleting
+			if (!window.confirm('Are you sure you want to delete this todo item? This cannot be undone.')) return;
+			// Remove the item from the todo state
+			list.todos.splice(todo, 1);
+			// Render a fresh UI
+			app.setData({lists: data.lists});
+		};
+		/**
+		 * Delete a list
+		 * @param  {Event} event The event object
+		 */
+		var deleteList = function (event) {
+			// Only run on delete button clicks
+			var list = event.target.getAttribute('data-delete-list');
+			if (!list) return;
+			// Get a copy of the data
+			var data = app.getData();
+			if (!data.lists[list]) return;
+			// Confirm with the user before deleting
+			if (!window.confirm('Are you sure you want to delete "' + data.lists[list].name + '"? All todo items associated with this list will also be deleted. This cannot be undone.')) return;
+			// Remove the item from the todo state
+			data.lists.splice(list, 1);
+			// Render a fresh UI
+			app.setData({lists: data.lists});
+		};
+		/**
+		 * Handle click events
+		 * @param  {Event} event The Event object
+		 */
+		var clickHandler = function (event) {
+			// Mark todo item as complete
+			completeTodo(event);
+			// Delete todo item
+			deleteTodo(event);
+			// Delete list
+			deleteList(event);
+		};
+		/**
+		 * Save todo items to localStorage
+		 */
+		var saveTodos = function () {
+			localStorage.setItem(storageID, JSON.stringify(app.getData()));
+		};
+		/**
+		 * Load todos into state on page load
+		 * @param {String} list The current list index
+		 */
+		var loadTodos = function (list) {
+			// Check for saved data in localStorage
+			var saved = localStorage.getItem(storageID);
+			var data = saved ? JSON.parse(saved) : {
+				lists: []
+			};
+			data.current = list ? parseInt(list, 10) : null;
+			// Update the state and run an initial render
+			app.setData(data);
+		};
+		/**
+		 * Setup the UI
+		 */
+		var setup = function () {
+			// Get the list ID from the URL if there is one
+			var list = getParams().list;
+			// If there's a list ID, create the todos view
+			// Otherwise, create the lists view
+			if (list) {
+				createTodos();
+			} else {
+				createLists();
+			}
+			// Render the initial UI
+			loadTodos(list);
+			// Define the field variable
+			// This will match against EITHER #new-list OR #new-todo, whichever it finds first
+			// This prevents me from having to conditionally set my selector
+			field = document.querySelector('#new-list, #new-todo');
+		};
+		//
+		// Inits & Event Listeners
+		//
+		// Setup the app view
+		setup();
+		// Listen for form submit events
+		document.addEventListener('submit', submitHandler, false);
+		// Listen for click events
+		document.addEventListener('click', clickHandler, false);
+		// On render events, save todo items
+		document.addEventListener('render', saveTodos, false);
+	</script>
+</body>
+</html>
